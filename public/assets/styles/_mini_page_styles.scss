@@ -1,0 +1,27 @@
+.top-main-page {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+  }
+  @media screen and(max-width:576px) {
+    height: 140px;
+    &-title {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+}

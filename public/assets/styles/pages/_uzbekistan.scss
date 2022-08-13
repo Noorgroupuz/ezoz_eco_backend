@@ -1,0 +1,102 @@
+.uzb_zona {
+  padding: 56px 0;
+  &-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+  &-name {
+    cursor: pointer;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    opacity: 1;
+    margin-bottom: 5px;
+  }
+  .uzbekistan_svg {
+    max-width: 100%;
+    .item {
+      cursor: pointer;
+      .location {
+        fill: #e4e4e4;
+        transition: 0.3s;
+        z-index: 2 !important;
+        position: relative !important;
+      }
+      .name {
+        z-index: 3 !important;
+        position: relative !important;
+        g {
+          display: none;
+          opacity: 0;
+          transition: 0.3s;
+        }
+        path {
+          display: none;
+          opacity: 0;
+          fill: white;
+          transition: 0.3s;
+        }
+      }
+      &:hover {
+        .location {
+          fill: #0c63a3;
+        }
+        .name {
+          g {
+            display: block;
+            opacity: 1;
+          }
+          path {
+            display: block;
+            opacity: 1;
+            fill: black;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and(max-width:767px) {
+  .uzb_zona {
+    &-title {
+      text-align: center;
+    }
+    .uzbekistan_svg {
+      height: 280px;
+    }
+  }
+}
+@media screen and(max-width:576px) {
+  .uzb_zona {
+    &-title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 16px;
+    }
+    &-name {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 26px;
+      margin-bottom: 15px;
+    }
+    padding: 40px 0 90px 0;
+    .uzbekistan_svg {
+      height: 225px;
+    }
+  }
+}
+@media screen and(max-width:410px) {
+  .uzb_zona {
+    .uzbekistan_svg {
+      height: 170px;
+    }
+  }
+}

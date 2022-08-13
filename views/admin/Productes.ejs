@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/styles/libraries/swiper.bundle.min.css"
+    />
+    <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="productes py-5">
+      <h1 class="text-center mb-4">Productes</h1>
+      <div class="container">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Image</th>
+              <th scope="col">Product title_ru</th>
+              <th scope="col">Product title_uz</th>
+              <th scope="col">Product description_ru</th>
+              <th scope="col">Product description_uz</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <% var productes = productes || [] %>
+          <tbody>
+            <% productes.map((item, index)=>{ %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td>
+                <img
+                  style="width: 100px"
+                  src="/files/<%= item.product_image %>"
+                  alt="img"
+                />
+              </td>
+              <td><%= item.product_title_ru %></td>
+              <td><%= item.product_title_uz %></td>
+              <td><%= item.product_description_ru %></td>
+              <td><%= item.product_description_uz %></td>
+              <td class="d-flex">
+                <a
+                  href="/admin/product/<%= item.product_id %>"
+                  class="btn btn-warning me-2"
+                  >Edit</a
+                >
+                <button
+                  onclick="deleteProduct('<%= item.product_id %>')"
+                  class="btn btn-danger deleteProductButton"
+                >
+                  Detele
+                </button>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="/assets/JavaScript/toastify.js"></script>
+  <script>
+    const deleteProduct = async (id) => {
+      const option = {
+        method: "delete",
+      };
+      let response = await fetch(`/admin/product/${id}`, option);
+      if (response.statusText) {
+        Toastify({
+          text: "Product is deleted",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "#198754",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      } else {
+        Toastify({
+          text: response.msg,
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "#fd7e14",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      }
+    };
+  </script>
+</html>

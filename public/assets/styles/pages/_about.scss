@@ -1,0 +1,94 @@
+.about_page {
+  &_top {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/main_page/about.jpg");
+    &-title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 55px;
+      color: #ffffff;
+      margin: 0;
+      text-align: start;
+      width: 50%;
+      @media screen and(max-width:1410px) {
+        width: 70%;
+      }
+      @media screen and(max-width:991px) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    @media screen and(max-width:576px) {
+      height: 192px;
+      &-title {
+        width: 100%;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 34px;
+      }
+    }
+  }
+  .about {
+    padding-top: 90px;
+    @media screen and(max-width:576px) {
+      padding-top: 49px;
+    }
+
+    &-title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 47px;
+      color: #000000;
+      margin-bottom: 33px;
+      @media screen and(max-width:576px) {
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 30px;
+      }
+    }
+    &-subtitle {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+      margin-bottom: 10px;
+      @media screen and(max-width:576px) {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &-text {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+      margin-bottom: 10px;
+      margin-top: 30px;
+      @media screen and(max-width:576px) {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &-list {
+      padding-left: 16px;
+      list-style-type: decimal;
+    }
+  }
+}

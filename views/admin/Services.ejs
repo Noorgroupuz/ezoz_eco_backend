@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/styles/libraries/swiper.bundle.min.css"
+    />
+    <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="productes py-5">
+      <h1 class="text-center mb-4">Services</h1>
+      <div class="container">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Banner image</th>
+              <th scope="col">Product image</th>
+              <th scope="col">Service text_ru</th>
+              <th scope="col">Service text_uz</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <% var services = services || [] %>
+          <tbody>
+            <% services.map((item, index)=>{ %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td>
+                <img
+                  style="width: 100px"
+                  src="/files/<%= item.service_banner_image %>"
+                  alt="img"
+                />
+              </td>
+              <td>
+                <img
+                  style="width: 100px"
+                  src="/files/<%= item.service_product_image %>"
+                  alt="img"
+                />
+              </td>
+              <td><%= item.service_ru %></td>
+              <td><%= item.service_uz %></td>
+              <td class="d-flex">
+                <a
+                  href="/admin/service/<%= item.service_id %>"
+                  class="btn btn-warning me-2"
+                  >Edit</a
+                >
+                <button
+                  onclick="deleteService('<%= item.service_id %>')"
+                  class="btn btn-danger deleteServiceButton"
+                >
+                  Detele
+                </button>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="/assets/JavaScript/toastify.js"></script>
+  <script>
+    const deleteIndustry = async (id) => {
+      const option = {
+        method: "delete",
+      };
+      let response = await fetch(`/admin/industry/${id}`, option);
+      if (response.statusText) {
+        Toastify({
+          text: "Industry is deleted",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "#198754",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      } else {
+        Toastify({
+          text: response.msg,
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "#fd7e14",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      }
+    };
+  </script>
+</html>

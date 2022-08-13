@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/styles/libraries/swiper.bundle.min.css"
+    />
+    <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <% var product = product || {} %>
+    <div
+      data-product_date="<%= JSON.stringify(product) %>"
+      class="editProductBox"
+    >
+      <div class="myLoader">
+        <div class="loadingio-spinner-ripple-6sk4j73oq33">
+          <div class="ldio-6co2x7efp9u">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-lg-5 mb-2">
+            <div class="card bg-transparent border-none">
+              <input class="w-100 ms-auto product_image" type="file" />
+            </div>
+            <hr />
+            <div class="imgWrapper">
+              <div class="d-flex mt-2 justify-content-between">
+                <img style="width: 100px" class="productImg" alt="" />
+                <button class="btn btn-close bg-white"></button>
+              </div>
+              <hr />
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <label for="product_title_ru">product_title_ru</label>
+            <textarea
+              id="product_title_ru"
+              placeholder="product_title_ru"
+              name="product_title_ru"
+              class="form-control mb-4 product_title_ru"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <label for="product_title_uz">product_title_uz</label>
+            <textarea
+              id="product_title_uz"
+              placeholder="product_title_uz"
+              name="product_title_uz"
+              class="form-control mb-4 product_title_uz"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <label for="product_description_ru">product_description_ru</label>
+            <textarea
+              id="product_description_ru"
+              placeholder="product_description_ru"
+              name="product_description_ru"
+              class="form-control mb-4 product_description_ru"
+              cols="30"
+              rows="2"
+            ></textarea>
+
+            <label for="product_description_uz">product_description_uz</label>
+            <textarea
+              id="product_description_uz"
+              placeholder="product_description_uz"
+              name="product_description_uz"
+              class="form-control mb-4 product_description_uz"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <button class="btn btn-success d-block w-100 product_button">
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/JavaScript/toastify.js"></script>
+    <script src="/assets/fetchRequests/editProduct.js"></script>
+  </body>
+</html>

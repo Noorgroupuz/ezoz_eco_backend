@@ -1,0 +1,209 @@
+.service_page {
+  background-color: #fff;
+  &-wrapper {
+    padding: 63px 0 140px 0;
+    @media screen and(max-width:991px) {
+      padding: 5px 0 90px 0;
+    }
+    &-img {
+      width: 100%;
+      @media screen and(max-width:991px) {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+      }
+      @media screen and(max-width:767px) {
+        width: 80%;
+      }
+      @media screen and(max-width:576px) {
+        width: 100%;
+      }
+    }
+    h4,
+    p {
+      font-family: "Roboto";
+      font-style: normal;
+      // font-weight: 600;
+      font-size: 15px;
+      line-height: 25px;
+      color: #000000;
+      margin: 0;
+      margin-bottom: 6px;
+    }
+    &-content {
+      &-one {
+        text-align: justify;
+      }
+    }
+  }
+  &_process {
+    padding: 100px 0;
+    background-image: url("../images/service/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &-title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 25px;
+      text-align: justify;
+      color: #000000;
+      margin: 0;
+      text-align: center;
+      margin-bottom: 76px;
+    }
+    .process {
+      &-img-box {
+        // width: 80%;
+        // margin: 0 auto;
+        img {
+          display: block;
+          margin: 0 auto;
+          width: 116px;
+          height: 116px;
+        }
+        margin-bottom: 90px;
+      }
+      &_content {
+        width: 80%;
+        @media screen and(max-width:1439px) {
+          width: 90%;
+        }
+        margin: 0 auto;
+        text-align: center;
+        &-title {
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 25px;
+          color: #000000;
+          margin-bottom: 14px;
+        }
+        &-subtitle {
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 25px;
+          color: #000000;
+          margin: 0;
+        }
+      }
+    }
+    .process-container {
+      position: relative;
+      .process_line1 {
+        img {
+          position: absolute;
+          top: 175px;
+          left: 0;
+        }
+        .line1 {
+          top: 167px;
+          position: absolute;
+          left: 32%;
+        }
+        .line2 {
+          top: 167px;
+          position: absolute;
+          left: 66.2%;
+        }
+      }
+      .process_line2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:991px) {
+  .service_page {
+    &_process {
+      &-title {
+        margin-bottom: 50px;
+      }
+      .process-container {
+        overflow: hidden;
+        padding-top: 25px;
+        padding-bottom: 20px;
+      }
+      .process {
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        margin-bottom: 70px;
+        &-img-box {
+          margin-right: 45px;
+          margin-bottom: 0;
+          img {
+            width: 74px;
+            height: 74px;
+          }
+        }
+        &_content {
+          text-align: left;
+        }
+      }
+      .last_process {
+        margin-bottom: 0;
+      }
+      .process_line1 {
+        display: none;
+      }
+      .process_line2 {
+        display: block !important;
+        // width: 12px;
+        img {
+          position: absolute;
+          top: -10%;
+          top: 0;
+          left: 92px;
+          width: 12px;
+          height: 100%;
+          object-fit: cover;
+        }
+        .line1 {
+          position: absolute;
+          left: 85px;
+          top: 27%;
+          // transform: rotate(90deg);
+        }
+        .line2 {
+          position: absolute;
+          left: 85px;
+          top: 66%;
+          // transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+@media screen and(max-width:576px) {
+  .service_page {
+    &_process {
+      padding: 70px 0 57px 0;
+      &-title {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 25px;
+      }
+      .process {
+        &_content {
+          &-title {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+          }
+          &-subtitle {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
