@@ -8,6 +8,7 @@ const postgress = require("./modules/postgres/postgres");
 const customErrorMiddleware = require("./middlewares/customErrorMiddleware");
 const PORT = process.env.PORT;
 const expressFileUploader = require("express-fileupload");
+const languageMiddleware = require("./middlewares/languageMiddleware");
 
 const start = async () => {
   try {
@@ -36,6 +37,7 @@ const start = async () => {
 
     app.use(express.static(path.join(__dirname, "public")));
     app.use(customErrorMiddleware);
+    app.use(languageMiddleware);
   } catch (error) {
     console.log(error);
   } finally {

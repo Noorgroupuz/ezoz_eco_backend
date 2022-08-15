@@ -1,5 +1,5 @@
-let industry_title_ru = document.querySelector(".industry_title_ru");
-let industry_title_uz = document.querySelector(".industry_title_uz");
+let industry_title_ru1 = document.querySelector(".industry_title_ru");
+let industry_title_uz1 = document.querySelector(".industry_title_uz");
 let industry_image = document.querySelector(".industry_image");
 let industry_button = document.querySelector(".industry_button");
 let edit = document.querySelector(".edit");
@@ -13,19 +13,21 @@ const industryBox = document.querySelector(".editIndustryBox");
 let industry = industryBox.dataset.industry_date;
 industry = JSON.parse(industry);
 console.log(industry);
-industry_title_ru.value = industry.industry_title_ru;
-industry_title_uz.value = industry.industry_title_uz;
+industry_title_ru1.value = industry.industry_title_ru;
+industry_title_uz1.value = industry.industry_title_uz;
 industryImg.src = "/files/" + industry.industry_image;
 
 btn_close.addEventListener("click", () => {
   document.querySelector(".imgWrapper").remove();
-  industryImg.remove();
+  // industryImg.remove();
+  industry.industry_image = "";
+  // industryImg.src = "";
 });
 industry_button.addEventListener("click", async () => {
   const formData = new FormData();
 
-  industry_title_ru = industry_title_ru.value;
-  industry_title_uz = industry_title_uz.value;
+  let industry_title_ru = industry_title_ru1.value;
+  let industry_title_uz = industry_title_uz1.value;
   if (
     !industry_title_ru ||
     !industry_title_uz ||

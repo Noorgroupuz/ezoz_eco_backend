@@ -15,42 +15,31 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="productes py-5">
-      <h1 class="text-center mb-4">Industries</h1>
+    <div class="applications py-5 text-center">
+      <h1 class="text-center mb-4">Applications</h1>
       <div class="container">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Image</th>
-              <th scope="col">Industry title_ru</th>
-              <th scope="col">Industry title_uz</th>
+              <th scope="col">Name</th>
+              <th scope="col">Number</th>
+              <th scope="col">Message</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <% var industries = industries || [] %>
+          <% var applications = applications || [] %>
           <tbody>
-            <% industries.map((item, index)=>{ %>
+            <% applications.map((item, index)=>{ %>
             <tr>
               <th scope="row"><%= index + 1 %></th>
-              <td>
-                <img
-                  style="width: 100px"
-                  src="/files/<%= item.industry_image %>"
-                  alt="img"
-                />
-              </td>
-              <td><%= item.industry_title_ru %></td>
-              <td><%= item.industry_title_uz %></td>
+              <td><%= item.name %></td>
+              <td><%= item.number %></td>
+              <td><%= item.message %></td>
               <td class="d-flex">
-                <a
-                  href="/admin/industry/<%= item.industry_id %>"
-                  class="btn btn-warning me-2"
-                  >Edit</a
-                >
                 <button
-                  onclick="deleteIndustry('<%= item.industry_id %>')"
-                  class="btn btn-danger deleteInustryButton"
+                  onclick="deleteApplication('<%= item.application_id %>')"
+                  class="btn btn-danger ms-auto me-auto deleteProductButton"
                 >
                   Detele
                 </button>
@@ -64,16 +53,16 @@
   </body>
   <script src="/assets/JavaScript/toastify.js"></script>
   <script>
-    const deleteIndustry = async (id) => {
+    const deleteApplication = async (id) => {
       const option = {
         method: "delete",
       };
-      let response = await fetch(`/admin/industry/${id}`, option);
+      let response = await fetch(`/admin/application/${id}`, option);
       response = await response.json();
       if (response.ok) {
-        window.location.href = "/admin/industries";
+        window.location.href = "/admin/applications";
         Toastify({
-          text: "Industry is deleted",
+          text: "Application is deleted",
           duration: 3000,
           destination: "https://github.com/apvarun/toastify-js",
           newWindow: true,

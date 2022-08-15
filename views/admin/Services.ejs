@@ -48,8 +48,8 @@
                   alt="img"
                 />
               </td>
-              <td><%= item.service_ru %></td>
-              <td><%= item.service_uz %></td>
+              <td><%- item.service_text_ru %></td>
+              <td><%- item.service_text_uz %></td>
               <td class="d-flex">
                 <a
                   href="/admin/service/<%= item.service_id %>"
@@ -72,14 +72,16 @@
   </body>
   <script src="/assets/JavaScript/toastify.js"></script>
   <script>
-    const deleteIndustry = async (id) => {
+    const deleteService = async (id) => {
       const option = {
         method: "delete",
       };
-      let response = await fetch(`/admin/industry/${id}`, option);
-      if (response.statusText) {
+      let response = await fetch(`/admin/service/${id}`, option);
+      response = await response.json();
+      if (response.ok) {
+        window.location.href = "/admin/services";
         Toastify({
-          text: "Industry is deleted",
+          text: "Service is deleted",
           duration: 3000,
           destination: "https://github.com/apvarun/toastify-js",
           newWindow: true,

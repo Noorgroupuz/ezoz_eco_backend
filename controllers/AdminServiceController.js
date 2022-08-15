@@ -16,10 +16,17 @@ const AdminServiceController = {
   },
   createService: async (req, res, next) => {
     try {
-      const { service_text_ru, service_text_uz } = req.body;
+      const {
+        service_text_ru,
+        service_text_uz,
+        service_title_ru,
+        service_title_uz,
+      } = req.body;
       const service = await req.db.services.create({
         service_text_ru,
         service_text_uz,
+        service_title_ru,
+        service_title_uz,
         service_banner_image: req.bannerImage[0],
         service_product_image: req.productImage[0],
       });
@@ -51,6 +58,8 @@ const AdminServiceController = {
       const {
         service_text_ru,
         service_text_uz,
+        service_title_ru,
+        service_title_uz,
         oldBannerImage,
         oldProductImage,
       } = req.body;
@@ -70,6 +79,8 @@ const AdminServiceController = {
         {
           service_text_ru,
           service_text_uz,
+          service_title_ru,
+          service_title_uz,
           service_banner_image: myBannerImage,
           service_product_image: myProductImage,
         },
@@ -99,11 +110,9 @@ const AdminServiceController = {
           service_id: req.params.id,
         },
       });
-      const services = await req.db.services.findAll();
-      removeImage({}, service.service_image);
-      res.render("admin/Serevices", {
-        services,
-      });
+      removeImage({}, service.service_product_image);
+      removeImage({}, service.service_banner_image);
+      res.json({ ok: true });
     } catch (error) {
       console.log(error.message);
       next(error);

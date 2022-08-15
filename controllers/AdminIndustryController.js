@@ -85,11 +85,8 @@ const AdminIndustryController = {
           industry_id: req.params.id,
         },
       });
-      const industries = await req.db.industries.findAll();
       removeImage({}, industry.industry_image);
-      res.render("admin/Industries", {
-        industries,
-      });
+      res.json({ ok: true });
     } catch (error) {
       console.log(error.message);
       next(error);

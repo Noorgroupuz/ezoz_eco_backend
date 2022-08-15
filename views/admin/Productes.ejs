@@ -73,7 +73,9 @@
         method: "delete",
       };
       let response = await fetch(`/admin/product/${id}`, option);
-      if (response.statusText) {
+      response = await response.json();
+      if (response.ok) {
+        window.location.href = "/admin/productes";
         Toastify({
           text: "Product is deleted",
           duration: 3000,

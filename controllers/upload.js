@@ -51,7 +51,6 @@ const upload = {
   },
   service: async (req, res, next) => {
     try {
-      console.log(req.files);
       if (!req.files) {
         next();
       } else {
@@ -94,12 +93,9 @@ const upload = {
             // for (let i = 0; i < fileNames.length; i++) {
             //   fileNames[i] = fileNames[i];
             // }
-            console.log(4);
             req.bannerImage = fileNames;
           }
-          console.log(3);
         }
-        console.log(22);
 
         if (req.files.productImage) {
           if (
@@ -152,3 +148,4 @@ const upload = {
 };
 
 module.exports = upload;
+ 

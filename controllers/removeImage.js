@@ -4,8 +4,6 @@ const removeImage = async (newImage, oldImage) => {
     if (newImage !== oldImage) {
       let name = oldImage;
       name = "./public/files/" + name;
-      console.log(name);
-      // name = name.replace("/api", ".");
       await fs.unlink(name, (err) => {
         if (err) {
           return console.log(err);

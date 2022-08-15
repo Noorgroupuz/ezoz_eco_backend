@@ -1,20 +1,16 @@
-let industry_title_ru = document.querySelector(".industry_title_ru");
-let industry_title_uz = document.querySelector(".industry_title_uz");
-let industry_image = document.querySelector(".industry_image");
+let industry_title_ru1 = document.querySelector(".industry_title_ru");
+let industry_title_uz1 = document.querySelector(".industry_title_uz");
+let industry_image1 = document.querySelector(".industry_image");
 let industry_button = document.querySelector(".industry_button");
 let loader = document.querySelector(".myLoader");
 
 industry_button.addEventListener("click", async () => {
   const formData = new FormData();
 
-  industry_title_ru = industry_title_ru.value;
-  industry_title_uz = industry_title_uz.value;
-  industry_image = industry_image.files[0];
-  if (
-    !industry_title_ru ||
-    !industry_title_uz ||
-    !industry_image
-  ) {
+  let industry_title_ru = industry_title_ru1.value;
+  let industry_title_uz = industry_title_uz1.value;
+  let industry_image = industry_image1.files[0];
+  if (!industry_title_ru || !industry_title_uz || !industry_image) {
     return alert("Iltimos malumotlarni to'ldiring");
   }
   loader.style.display = "flex";

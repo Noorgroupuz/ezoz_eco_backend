@@ -61,12 +61,6 @@ const AdminProductController = {
         product_description_uz,
         oldImage,
       } = req.body;
-      console.log(
-        product_title_ru,
-        product_title_uz,
-        product_description_ru,
-        product_description_uz
-      );
       let myImage = "";
       if (req.fileNames) {
         myImage = req.fileNames[0];
@@ -106,11 +100,8 @@ const AdminProductController = {
           product_id: req.params.id,
         },
       });
-      const productes = await req.db.productes.findAll();
       removeImage({}, product.product_image);
-      res.render("admin/Productes", {
-        productes: productes,
-      });
+      res.json({ ok: true });
     } catch (error) {
       console.log(error.message);
       next(error);

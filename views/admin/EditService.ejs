@@ -38,7 +38,9 @@
               <div class="bannerWrapper">
                 <div class="d-flex mt-2 justify-content-between">
                   <img style="width: 100px" class="bannerImg" alt="" />
-                  <button class="btn btn-close btn-banner-close bg-white"></button>
+                  <button
+                    class="btn btn-close btn-banner-close bg-white"
+                  ></button>
                 </div>
               </div>
             </div>
@@ -50,29 +52,51 @@
               <div class="productWrapper">
                 <div class="d-flex mt-2 justify-content-between">
                   <img style="width: 100px" class="productImg" alt="" />
-                  <button class="btn btn-close btn-product-close bg-white"></button>
+                  <button
+                    class="btn btn-close btn-product-close bg-white"
+                  ></button>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6 offset-lg-1">
+            <label for="service_title_ru">service_title_ru</label>
+            <textarea
+              id="service_title_ru"
+              placeholder="service_title_ru"
+              name="service_title_ru"
+              class="form-control mb-4 service_title_ru"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <label for="service_title_uz">service_title_uz</label>
+            <textarea
+              id="service_title_uz"
+              placeholder="service_title_uz"
+              name="service_title_uz"
+              class="form-control mb-4 service_title_uz"
+              cols="30"
+              rows="2"
+            ></textarea>
+          </div>
+          <div>
             <label for="service_text_ru">service_text_ru</label>
             <textarea
-              id="service_text_ru"
               placeholder="service_text_ru"
               name="service_text_ru"
               class="form-control mb-4 service_text_ru"
               cols="30"
               rows="2"
+              id="myTextarea10"
             ></textarea>
             <label for="service_text_uz">service_text_uz</label>
             <textarea
-              id="service_text_uz"
               placeholder="service_text_uz"
               name="service_text_uz"
               class="form-control mb-4 service_text_uz"
               cols="30"
               rows="2"
+              id="myTextarea11"
             ></textarea>
 
             <button class="btn btn-success d-block w-100 service_button">
@@ -82,6 +106,9 @@
         </div>
       </div>
     </div>
+    <script src="/assets/JavaScript/tiny.js" referrerpolicy="origin"></script>
+    <script src="/assets/JavaScript/tinymce.js"></script>
+
     <script src="/assets/JavaScript/toastify.js"></script>
     <script src="/assets/fetchRequests/editService.js"></script>
   </body>

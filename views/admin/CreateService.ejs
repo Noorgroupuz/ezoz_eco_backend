@@ -38,19 +38,30 @@
               <input class="w-100 ms-auto service_product_image" type="file" />
             </div>
           </div>
-          <div class="col-lg-6 offset-lg-1">
-            <input
-              type="text"
+          <div class="col-lg-12">
+            <textarea
+              placeholder="service_title_ru"
+              name="service_title_ru"
+              class="form-control mb-2 service_title_ru"
+            ></textarea>
+            <textarea
+              placeholder="service_title_uz"
+              name="service_title_uz"
+              class="form-control mb-2 service_title_uz"
+            ></textarea>
+            <textarea
               placeholder="service_text_ru"
               name="service_text_ru"
               class="form-control mb-2 service_text_ru"
-            />
-            <input
-              type="text"
+              id="myTextarea10"
+            ></textarea>
+            <p class="mb-4"></p>
+            <textarea
               placeholder="service_text_uz"
               name="service_text_uz"
               class="form-control mb-2 service_text_uz"
-            />
+              id="myTextarea11"
+            ></textarea>
             <button class="btn btn-success d-block w-100 service_button">
               Create
             </button>
@@ -60,5 +71,7 @@
     </div>
     <script src="/assets/JavaScript/toastify.js"></script>
     <script src="/assets/fetchRequests/createService.js"></script>
+    <script referrerpolicy="origin" src="/assets/JavaScript/tiny.js"></script>
+    <script src="/assets/JavaScript/tinymce.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 const { Sequelize } = require("sequelize");
 const AdminModel = require("../../models/AdminModel");
+const ApplicationModel = require("../../models/ApplicationModel");
 const IndustryModel = require("../../models/IndustryModel");
 const ProductModel = require("../../models/ProductModel");
 const ServiceModel = require("../../models/ServiceModel");
@@ -15,6 +16,7 @@ const postgress = async () => {
     db.productes = await ProductModel(Sequelize, sequelize);
     db.industries = await IndustryModel(Sequelize, sequelize);
     db.services = await ServiceModel(Sequelize, sequelize);
+    db.applications = await ApplicationModel(Sequelize, sequelize);
 
     console.log("DB is connected");
     // await sequelize.sync({ force: true });

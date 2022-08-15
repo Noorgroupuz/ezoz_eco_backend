@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/logo.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/styles/libraries/swiper.bundle.min.css"
+    />
+    <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <title>E'zoz Eco</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="myLoader">
+        <div class="loadingio-spinner-ripple-6sk4j73oq33">
+          <div class="ldio-6co2x7efp9u">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="header_one sticky-one">
+        <div class="container">
+          <div class="header_one_items">
+            <div class="header_one_items--number">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5855 9.79183C9.44564 11.3029 10.6971 12.5544 12.2082 13.4145L13.0185 12.2797C13.1488 12.0972 13.3415 11.9688 13.5601 11.9188C13.7787 11.8688 14.008 11.9007 14.2047 12.0083C15.5011 12.7168 16.9329 13.143 18.4058 13.2587C18.6356 13.2769 18.8502 13.3811 19.0067 13.5505C19.1631 13.7198 19.25 13.942 19.25 14.1726V18.2628C19.25 18.4897 19.1659 18.7086 19.0138 18.8771C18.8618 19.0456 18.6526 19.1517 18.4268 19.1748C17.941 19.2253 17.4515 19.25 16.9583 19.25C9.11167 19.25 2.75 12.8883 2.75 5.04167C2.75 4.5485 2.77475 4.059 2.82517 3.57317C2.84832 3.34739 2.9544 3.13823 3.12289 2.98616C3.29138 2.8341 3.51029 2.74995 3.73725 2.75H7.82742C8.05802 2.74997 8.28015 2.83686 8.44954 2.99333C8.61893 3.1498 8.72312 3.36437 8.74133 3.59425C8.85704 5.06714 9.28315 6.49887 9.99167 7.79533C10.0993 7.99202 10.1312 8.22135 10.0812 8.43993C10.0312 8.65851 9.90281 8.85119 9.72033 8.9815L8.5855 9.79183ZM6.27367 9.18958L8.01533 7.94567C7.52105 6.87875 7.18241 5.74644 7.00975 4.58333H4.5925C4.587 4.7355 4.58425 4.88858 4.58425 5.04167C4.58333 11.8763 10.1237 17.4167 16.9583 17.4167C17.1114 17.4167 17.2645 17.4139 17.4167 17.4075V14.9903C16.2536 14.8176 15.1212 14.4789 14.0543 13.9847L12.8104 15.7263C12.3096 15.5317 11.8232 15.302 11.3548 15.0388L11.3016 15.0086C9.50361 13.9853 8.01467 12.4964 6.99142 10.6984L6.96117 10.6453C6.698 10.1768 6.46826 9.69039 6.27367 9.18958Z"
+                  fill="white"
+                />
+              </svg>
+              <a href="tel:+998992079998">+998 99 207 99 98</a>
+            </div>
+            <div class="header_one_items--logo">
+              <img src="/assets/images/logo.svg" alt="logo" />
+              <h2>E’ZOZ ECO MED SERVIS</h2>
+            </div>
+            <div class="header_one_items--edit">
+              <button class="header_one_items--edit-button">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.8105 12L12.417 4.3935L11.3565 3.333L3.75 10.9395V12H4.8105ZM5.43225 13.5H2.25V10.3178L10.8263 1.7415C10.9669 1.6009 11.1576 1.52191 11.3565 1.52191C11.5554 1.52191 11.7461 1.6009 11.8868 1.7415L14.0085 3.86325C14.1491 4.0039 14.2281 4.19463 14.2281 4.3935C14.2281 4.59237 14.1491 4.78311 14.0085 4.92375L5.43225 13.5ZM2.25 15H15.75V16.5H2.25V15Z"
+                    fill="white"
+                  />
+                </svg>
+                <p><%= language.navbar.message[lan] %></p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header_two sticky-two">
+        <div class="container">
+          <div class="header_two-logo">
+            <a href="/">
+              <img src="/assets/images/logo.svg" alt="logo" />
+            </a>
+          </div>
+          <div class="header_two-links">
+            <div class="header_two-links-item">
+              <a href="/services"><%= language.navbar.links.item1[lan] %></a>
+            </div>
+            <div class="header_two-links-item">
+              <a href="/industries"><%= language.navbar.links.item2[lan] %></a>
+            </div>
+            <div class="header_two-links-item">
+              <a href="/productes"><%= language.navbar.links.item3[lan] %></a>
+            </div>
+            <div class="header_two-links-item">
+              <a href="/about"><%= language.navbar.links.item4[lan] %></a>
+            </div>
+            <div class="header_two-links-item">
+              <a href="/tashkent"><%= language.navbar.links.item5[lan] %></a>
+            </div>
+            <div class="header_two-links-item">
+              <a href="/uzbekistan"><%= language.navbar.links.item6[lan] %></a>
+            </div>
+          </div>
+          <div class="header_two-language">
+            <div class="header_two-language-item">
+              <select id="language" name="lang">
+                <option <% if(lan === "ru") { %> selected <% } %> value="ru">
+                  <%= language.navbar.languages.ru[lan] %>
+                </option>
+                <option <% if(lan === "uz") { %> selected <% } %> value="uz"><%= language.navbar.languages.uz[lan] %></option>
+              </select>
+            </div>
+          </div>
+          <button class="header_two-hidder">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 22.5V25H6.25V22.5H20ZM26.25 13.75V16.25H3.75V13.75H26.25ZM23.75 5V7.5H10V5H23.75Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="header_modal">
+        <div class="header_modal_wrapper">
+          <div class="header_modal_wrapper-header">
+            <a href="#">
+              <img src="/assets/images/logo.svg" alt="logo" />
+            </a>
+            <select id="language1" name="lang">
+              <option <% if(lan === "ru") { %> selected <% } %> value="ru">
+                <%= language.navbar.languages.ru[lan] %>
+              </option>
+              <option <% if(lan === "uz") { %> selected <% } %> value="uz"><%= language.navbar.languages.uz[lan] %></option>
+            </select>
+            <button class="header_modal_wrapper-header-closer">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.9999 13.2324L21.1874 7.04492L22.9549 8.81242L16.7674 14.9999L22.9549 21.1874L21.1874 22.9549L14.9999 16.7674L8.81242 22.9549L7.04492 21.1874L13.2324 14.9999L7.04492 8.81242L8.81242 7.04492L14.9999 13.2324Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="header_modal_wrapper-links">
+            <a href="/services"><%= language.navbar.links.item1[lan] %></a>
+            <a href="/industries"><%= language.navbar.links.item2[lan] %></a>
+            <a href="/productes"><%= language.navbar.links.item3[lan] %></a>
+            <a href="/about"><%= language.navbar.links.item4[lan] %></a>
+            <a href="/tashkent"><%= language.navbar.links.item5[lan] %></a>
+            <a href="/uzbekistan"><%= language.navbar.links.item6[lan] %></a>
+          </div>
+          <div class="header_modal_wrapper-social">
+            <a href="#">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0C16.5321 0 16.9728 0.0129999 18.3586 0.0779999C19.7431 0.143 20.6856 0.3601 21.515 0.6825C22.373 1.0127 23.0958 1.4599 23.8186 2.1814C24.4796 2.83126 24.9911 3.61737 25.3175 4.485C25.6386 5.3131 25.857 6.2569 25.922 7.6414C25.9831 9.0272 26 9.4679 26 13C26 16.5321 25.987 16.9728 25.922 18.3586C25.857 19.7431 25.6386 20.6856 25.3175 21.515C24.9921 22.3831 24.4805 23.1694 23.8186 23.8186C23.1686 24.4794 22.3825 24.9909 21.515 25.3175C20.6869 25.6386 19.7431 25.857 18.3586 25.922C16.9728 25.9831 16.5321 26 13 26C9.4679 26 9.0272 25.987 7.6414 25.922C6.2569 25.857 5.3144 25.6386 4.485 25.3175C3.61702 24.9918 2.83079 24.4802 2.1814 23.8186C1.52023 23.1688 1.00871 22.3827 0.6825 21.515C0.3601 20.6869 0.143 19.7431 0.0779999 18.3586C0.0168999 16.9728 0 16.5321 0 13C0 9.4679 0.0129999 9.0272 0.0779999 7.6414C0.143 6.2556 0.3601 5.3144 0.6825 4.485C1.00781 3.61683 1.51944 2.83052 2.1814 2.1814C2.83097 1.52 3.61716 1.00845 4.485 0.6825C5.3144 0.3601 6.2556 0.143 7.6414 0.0779999C9.0272 0.0168999 9.4679 0 13 0ZM13 6.5C11.2761 6.5 9.62279 7.18482 8.40381 8.40381C7.18482 9.62279 6.5 11.2761 6.5 13C6.5 14.7239 7.18482 16.3772 8.40381 17.5962C9.62279 18.8152 11.2761 19.5 13 19.5C14.7239 19.5 16.3772 18.8152 17.5962 17.5962C18.8152 16.3772 19.5 14.7239 19.5 13C19.5 11.2761 18.8152 9.62279 17.5962 8.40381C16.3772 7.18482 14.7239 6.5 13 6.5ZM21.45 6.175C21.45 5.74402 21.2788 5.3307 20.974 5.02595C20.6693 4.7212 20.256 4.55 19.825 4.55C19.394 4.55 18.9807 4.7212 18.6759 5.02595C18.3712 5.3307 18.2 5.74402 18.2 6.175C18.2 6.60598 18.3712 7.0193 18.6759 7.32405C18.9807 7.62879 19.394 7.8 19.825 7.8C20.256 7.8 20.6693 7.62879 20.974 7.32405C21.2788 7.0193 21.45 6.60598 21.45 6.175ZM13 9.1C14.0343 9.1 15.0263 9.51089 15.7577 10.2423C16.4891 10.9737 16.9 11.9657 16.9 13C16.9 14.0343 16.4891 15.0263 15.7577 15.7577C15.0263 16.4891 14.0343 16.9 13 16.9C11.9657 16.9 10.9737 16.4891 10.2423 15.7577C9.51089 15.0263 9.1 14.0343 9.1 13C9.1 11.9657 9.51089 10.9737 10.2423 10.2423C10.9737 9.51089 11.9657 9.1 13 9.1Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 26C5.8201 26 0 20.1799 0 13C0 5.8201 5.8201 0 13 0C20.1799 0 26 5.8201 26 13C26 20.1799 20.1799 26 13 26ZM8.957 14.521L8.9739 14.5119L10.1049 18.2429C10.2505 18.6472 10.4507 18.72 10.6938 18.6862C10.9382 18.6537 11.0669 18.5224 11.2268 18.369L12.7712 16.8766L16.0862 19.331C16.692 19.6651 17.1275 19.4922 17.2783 18.7694L19.4324 8.6008C19.6703 7.6544 19.2543 7.2748 18.5198 7.5764L5.8669 12.4644C5.0037 12.8102 5.0089 13.2938 5.7109 13.5083L8.957 14.5223V14.521Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                width="25"
+                height="26"
+                viewBox="0 0 25 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.5 0C5.59625 0 0 5.85553 0 13.0791C0 19.6069 4.57125 25.0178 10.5475 26V16.859H7.3725V13.0791H10.5475V10.1978C10.5475 6.92017 12.4125 5.11002 15.2688 5.11002C16.6362 5.11002 18.0662 5.36506 18.0662 5.36506V8.58253H16.4912C14.9375 8.58253 14.4537 9.59093 14.4537 10.6255V13.0791H17.92L17.3662 16.859H14.4537V26C20.4287 25.0191 25 19.6056 25 13.0791C25 5.85553 19.4037 0 12.5 0Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="header_modal_buttons">
+          <button class="modal_buttons-edit header_one_items--edit-button2">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.8105 12L12.417 4.3935L11.3565 3.333L3.75 10.9395V12H4.8105ZM5.43225 13.5H2.25V10.3178L10.8263 1.7415C10.9669 1.6009 11.1576 1.52191 11.3565 1.52191C11.5554 1.52191 11.7461 1.6009 11.8868 1.7415L14.0085 3.86325C14.1491 4.0039 14.2281 4.19463 14.2281 4.3935C14.2281 4.59237 14.1491 4.78311 14.0085 4.92375L5.43225 13.5ZM2.25 15H15.75V16.5H2.25V15Z"
+                fill="#ff8d06"
+              />
+            </svg>
+            <p><%= language.navbar.message[lan] %></p>
+          </button>
+          <a href="tel:+998992079998">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.5855 9.79183C9.44564 11.3029 10.6971 12.5544 12.2082 13.4145L13.0185 12.2797C13.1488 12.0972 13.3415 11.9688 13.5601 11.9188C13.7787 11.8688 14.008 11.9007 14.2047 12.0083C15.5011 12.7168 16.9329 13.143 18.4058 13.2587C18.6356 13.2769 18.8502 13.3811 19.0067 13.5505C19.1631 13.7198 19.25 13.942 19.25 14.1726V18.2628C19.25 18.4897 19.1659 18.7086 19.0138 18.8771C18.8618 19.0456 18.6526 19.1517 18.4268 19.1748C17.941 19.2253 17.4515 19.25 16.9583 19.25C9.11167 19.25 2.75 12.8883 2.75 5.04167C2.75 4.5485 2.77475 4.059 2.82517 3.57317C2.84832 3.34739 2.9544 3.13823 3.12289 2.98616C3.29138 2.8341 3.51029 2.74995 3.73725 2.75H7.82742C8.05802 2.74997 8.28015 2.83686 8.44954 2.99333C8.61893 3.1498 8.72312 3.36437 8.74133 3.59425C8.85704 5.06714 9.28315 6.49887 9.99167 7.79533C10.0993 7.99202 10.1312 8.22135 10.0812 8.43993C10.0312 8.65851 9.90281 8.85119 9.72033 8.9815L8.5855 9.79183ZM6.27367 9.18958L8.01533 7.94567C7.52105 6.87875 7.18241 5.74644 7.00975 4.58333H4.5925C4.587 4.7355 4.58425 4.88858 4.58425 5.04167C4.58333 11.8763 10.1237 17.4167 16.9583 17.4167C17.1114 17.4167 17.2645 17.4139 17.4167 17.4075V14.9903C16.2536 14.8176 15.1212 14.4789 14.0543 13.9847L12.8104 15.7263C12.3096 15.5317 11.8232 15.302 11.3548 15.0388L11.3016 15.0086C9.50361 13.9853 8.01467 12.4964 6.99142 10.6984L6.96117 10.6453C6.698 10.1768 6.46826 9.69039 6.27367 9.18958Z"
+                fill="white"
+              />
+            </svg>
+            <span>+998 99 207 99 98</span>
+          </a>
+        </div>
+      </div>
+      <div class="header_edit_modal">
+        <div class="header_edit_modal-wrapper">
+          <div class="header_edit_modal-top">
+            <h3 class="header_edit_modal-top-title"><%= language.navbar.message[lan] %></h3>
+            <button class="header_edit_modal-top-closer">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.9999 13.2324L21.1874 7.04492L22.9549 8.81242L16.7674 14.9999L22.9549 21.1874L21.1874 22.9549L14.9999 16.7674L8.81242 22.9549L7.04492 21.1874L13.2324 14.9999L7.04492 8.81242L8.81242 7.04492L14.9999 13.2324Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+          <form class="header_edit_modal-form">
+            <label for="name"><%= language.application.nameLabel[lan] %></label>
+            <input
+              class="header_edit_modal-form_name"
+              type="text"
+              id="name"
+              placeholder="<%= language.application.namePlaceholder[lan] %>"
+            />
+            <div class="header_edit_modal_form_name-wrapper">
+              <label for="number"><%= language.application.numberLabel[lan] %></label>
+              <input
+                class="header_edit_modal-form_number"
+                type="number"
+                id="number"
+                placeholder="<%= language.application.numberPlaceholder[lan] %>"
+              />
+              <span>+998</span>
+            </div>
+            <label for="appeal"><%= language.application.messageLabel[lan] %></label>
+            <textarea
+              class="header_edit_modal-form_appeal"
+              name="appeal"
+              id="appeal"
+              rows="3"
+              placeholder="<%= language.application.messagePlaceholder[lan] %>"
+            ></textarea>
+            <button type="button" class="header_edit_modal-form_button">
+              <%= language.application.button[lan] %>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="header-starter"></div>
+    </header>
+  </body>
+</html>

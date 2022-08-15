@@ -1,3 +1,4 @@
+const AdminApplicationController = require("../controllers/AdminApplicationController");
 const AdminController = require("../controllers/AdminController");
 const AdminIndustryController = require("../controllers/AdminIndustryController");
 const AdminProductController = require("../controllers/AdminProductController");
@@ -43,7 +44,6 @@ router.route("/createIndustry").get((req, res) => {
   res.render("admin/CreateIndustry");
 });
 
-
 // Services
 router
   .route("/services")
@@ -60,6 +60,16 @@ router.route("/createService").get((req, res) => {
   res.render("admin/CreateService");
 });
 
+// Application
+router
+  .route("/applications")
+  .get(AdminApplicationController.getApplications)
+  .post(AdminApplicationController.createApplication);
+router
+  .route("/application/:id")
+  .delete(AdminApplicationController.deleteApplication);
+
+// Login
 router
   .route("/login")
   .post(AdminController.login)
@@ -67,6 +77,7 @@ router
     res.render("admin/Login", {});
   });
 
+// Register
 router.post("/register", AdminController.register);
 router.get("/register", (req, res) => {
   res.render("admin/Register", {});
