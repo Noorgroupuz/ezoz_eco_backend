@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/styles/main.css" />
     <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
-    <link
-      rel="stylesheet"
-      href="/assets/styles/libraries/swiper.bundle.min.css"
-    />
+
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
+
     <title>Document</title>
   </head>
   <body>
-    <div class="w-100 navbarWrapper adminNavbar pt-0">
+    <div class="admin-header">
       <nav class="navbar navbar-dark bg-dark w-100">
         <div
           class="container d-flex align-items-center justify-content-between"
@@ -34,7 +31,7 @@
                     aria-current="page"
                     href="/admin/productes"
                   >
-                    Productes
+                    Mahsulotlar
                   </a>
                 </li>
                 <li class="nav-item me-4">
@@ -43,7 +40,7 @@
                     aria-current="page"
                     href="/admin/industries"
                   >
-                    Industries
+                    Sanoatlar
                   </a>
                 </li>
                 <li class="nav-item me-4">
@@ -52,7 +49,7 @@
                     aria-current="page"
                     href="/admin/services"
                   >
-                    Services
+                    Xizmatlar
                   </a>
                 </li>
                 <li class="nav-item me-4">
@@ -61,7 +58,7 @@
                     aria-current="page"
                     href="/admin/applications"
                   >
-                    Applications
+                    Arizalar
                   </a>
                 </li>
                 <li class="nav-item me-4">
@@ -70,7 +67,7 @@
                     aria-current="page"
                     href="/admin/createProduct"
                   >
-                    Create product
+                    Mahsulot yaratish
                   </a>
                 </li>
                 <li class="nav-item me-4">
@@ -79,7 +76,7 @@
                     aria-current="page"
                     href="/admin/createIndustry"
                   >
-                    Create industry
+                    Sanoat yaratish
                   </a>
                 </li>
                 <li class="nav-item me-4">
@@ -88,12 +85,14 @@
                     aria-current="page"
                     href="/admin/createService"
                   >
-                    Create service
+                    Xizmat yaratish
                   </a>
                 </li>
-
                 <li class="nav-item">
-                  <button class="nav-link text-nowrap btn" aria-current="page">
+                  <button
+                    class="nav-link text-nowrap btn logOutButton"
+                    aria-current="page"
+                  >
                     Log out
                   </button>
                 </li>
@@ -103,6 +102,7 @@
         </div>
       </nav>
       <h2 class="py-4 text-center">Dashboard</h2>
+      <script src="/assets/javaScript/logout.js"></script>
     </div>
   </body>
 </html>

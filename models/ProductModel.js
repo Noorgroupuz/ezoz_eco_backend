@@ -8,20 +8,28 @@ module.exports = async (Sequelize, sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      product_title_ru: {
+      product_name_ru: {
         type: Sequelize.STRING(),
+        allowNull: false,
+      },
+      product_name_uz: {
+        type: Sequelize.STRING(),
+        allowNull: false,
+      },
+      product_title_ru: {
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       product_title_uz: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       product_description_ru: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       product_description_uz: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       product_image: {

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body><%- include("AdminHeader.ejs") %>
     <% var product = product || {} %>
     <div
       data-product_date="<%= JSON.stringify(product) %>"
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="container py-3">
+      <div class="container py-5">
         <div class="row">
           <div class="col-lg-5 mb-2">
             <div class="card bg-transparent border-none">
@@ -44,45 +44,63 @@
             </div>
           </div>
           <div class="col-lg-6 offset-lg-1">
-            <label for="product_title_ru">product_title_ru</label>
+            <label for="product_name_ru">Mahsulot nomi rus</label>
+            <textarea
+              id="product_name_ru"
+              placeholder="Product name ru"
+              name="product_name_ru"
+              class="form-control mb-4 product_name_ru"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <label for="product_name_uz">Mahsulot nomi uz</label>
+            <textarea
+              id="product_name_uz"
+              placeholder="Product name uz"
+              name="product_name_uz"
+              class="form-control mb-4 product_name_uz"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <label for="product_title_ru">Mahsulot title rus</label>
             <textarea
               id="product_title_ru"
-              placeholder="product_title_ru"
+              placeholder="Product title ru"
               name="product_title_ru"
               class="form-control mb-4 product_title_ru"
               cols="30"
               rows="2"
             ></textarea>
-            <label for="product_title_uz">product_title_uz</label>
+            <label for="product_title_uz">Mahsulot title uz</label>
             <textarea
               id="product_title_uz"
-              placeholder="product_title_uz"
+              placeholder="Product title uz"
               name="product_title_uz"
               class="form-control mb-4 product_title_uz"
               cols="30"
               rows="2"
             ></textarea>
-            <label for="product_description_ru">product_description_ru</label>
+            <label for="product_description_ru">Mahsulot ta'rifi rus</label>
             <textarea
               id="product_description_ru"
-              placeholder="product_description_ru"
+              placeholder="Product description ru"
               name="product_description_ru"
               class="form-control mb-4 product_description_ru"
               cols="30"
               rows="2"
             ></textarea>
 
-            <label for="product_description_uz">product_description_uz</label>
+            <label for="product_description_uz">Mahsulot ta'rifi uz</label>
             <textarea
               id="product_description_uz"
-              placeholder="product_description_uz"
+              placeholder="product description uz"
               name="product_description_uz"
               class="form-control mb-4 product_description_uz"
               cols="30"
               rows="2"
             ></textarea>
             <button class="btn btn-success d-block w-100 product_button">
-              Edit
+              Tahrirlash
             </button>
           </div>
         </div>

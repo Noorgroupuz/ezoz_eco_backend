@@ -9,11 +9,11 @@ module.exports = async (Sequelize, sequelize) => {
         allowNull: false,
       },
       industry_title_ru: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       industry_title_uz: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       industry_image: {

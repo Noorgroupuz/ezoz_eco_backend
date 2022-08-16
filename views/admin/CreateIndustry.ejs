@@ -16,6 +16,7 @@
     <title>Document</title>
   </head>
   <body>
+    <%- include("AdminHeader.ejs") %>
     <div>
       <div class="myLoader">
         <div class="loadingio-spinner-ripple-6sk4j73oq33">
@@ -25,29 +26,36 @@
           </div>
         </div>
       </div>
-      <div class="container py-3">
+      <div class="container py-5">
         <div class="row">
           <div class="col-lg-5 mb-2">
-            <div class="card bg-transparent border-none">
+            <div class="card bg-transparent border-none p-2">
+              <h5 class="mb-1">Sanoat rasmi</h5>
               <input class="w-100 ms-auto industry_image" type="file" />
             </div>
             <hr />
           </div>
           <div class="col-lg-6 offset-lg-1">
-            <input
-              type="text"
-              placeholder="industry_title_ru"
+            <label for="industry_title_ru">Sanoat nomi rus</label>
+            <textarea
+              id="industry_title_ru"
+              placeholder="Sanoat nomi rus"
               name="industry_title_ru"
-              class="form-control mb-2 industry_title_ru"
-            />
-            <input
-              type="text"
-              placeholder="industry_title_uz"
+              class="form-control mb-4 industry_title_ru"
+              cols="30"
+              rows="2"
+            ></textarea>
+            <label for="industry_title_uz">Sanoat nomi uz</label>
+            <textarea
+              id="industry_title_uz"
+              placeholder="Sanoat nomi uz"
               name="industry_title_uz"
-              class="form-control mb-2 industry_title_uz"
-            />
+              class="form-control mb-4 industry_title_uz"
+              cols="30"
+              rows="2"
+            ></textarea>
             <button class="btn btn-success d-block w-100 industry_button">
-              Create
+              Yaratish
             </button>
           </div>
         </div>

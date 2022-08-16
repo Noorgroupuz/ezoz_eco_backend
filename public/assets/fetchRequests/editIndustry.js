@@ -3,6 +3,7 @@ let industry_title_uz1 = document.querySelector(".industry_title_uz");
 let industry_image = document.querySelector(".industry_image");
 let industry_button = document.querySelector(".industry_button");
 let edit = document.querySelector(".edit");
+let img = "";
 
 let btn_close = document.querySelector(".btn-close");
 let industryImg = document.querySelector(".industryImg");
@@ -12,7 +13,6 @@ let loader = document.querySelector(".myLoader");
 const industryBox = document.querySelector(".editIndustryBox");
 let industry = industryBox.dataset.industry_date;
 industry = JSON.parse(industry);
-console.log(industry);
 industry_title_ru1.value = industry.industry_title_ru;
 industry_title_uz1.value = industry.industry_title_uz;
 industryImg.src = "/files/" + industry.industry_image;
@@ -20,6 +20,7 @@ industryImg.src = "/files/" + industry.industry_image;
 btn_close.addEventListener("click", () => {
   document.querySelector(".imgWrapper").remove();
   // industryImg.remove();
+  img = industry.industry_image;
   industry.industry_image = "";
   // industryImg.src = "";
 });
@@ -41,8 +42,8 @@ industry_button.addEventListener("click", async () => {
   if (industry_image.files[0]) {
     formData.append("image", industry_image.files[0]);
   }
-  if (industry.industry_image) {
-    formData.append("oldImage", industry.industry_image);
+  if (img) {
+    formData.append("oldImage", img);
   }
   const option = {
     method: "put",

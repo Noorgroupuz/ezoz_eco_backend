@@ -10,31 +10,43 @@
   </div>
   <div class="productes_page-wrapper">
     <div class="container">
-      <div class="product wow animate__fadeInRight">
+      <% productes.forEach(function(item, index){ %>
+      <div
+        class="product wow <%= index%2===1 ? 'animate__fadeInLeft' : 'animate__fadeInRight' %>"
+      >
         <div class="row">
-          <div class="col-lg-5 mb-lg-0 mb-4">
+          <div
+            class="col-lg-5 mb-lg-0 mb-4 <%= index%2===0 ? '' : 'order-lg-2 order-1' %>"
+          >
             <div class="product_image_wrapper">
               <img
                 class="product_image"
-                src="../assets/images/productes/1.png"
+                src="/files/<%= item.product_image %>"
                 alt="img"
               />
               <div class="product_image_wrapper-mask"></div>
             </div>
           </div>
-          <div class="col-lg-7">
+          <div class="col-lg-7 <%= index%2===0 ? '' : 'order-lg-1 order-2' %>">
             <div class="product-content">
               <div class="product-content-wrapper">
+                <% if(lan === "uz") { %>
                 <h3 class="product-content-wrapper-title">
-                  Одноразовые коробки для утилизации медицинских и биологических
-                  опасных отходов с емкостю 5л
+                  <%= item.product_title_uz %>
                 </h3>
+                <% } else { %>
+                <h3 class="product-content-wrapper-title">
+                  <%= item.product_title_ru %>
+                </h3>
+                <% } %> <% if(lan === "uz") { %>
                 <p class="product-content-wrapper-subtitle">
-                  Предназначены для сбора, транспортировки и утилизации опасных
-                  медицинских отходов с биологическими загрязнениями, в том
-                  числе — перевязочных материалов, лабораторных емкостей,
-                  систем, игл, шприцов
+                  <%= item.product_title_uz %>
                 </p>
+                <% } else { %>
+                <p class="product-content-wrapper-subtitle">
+                  <%= item.product_title_ru %>
+                </p>
+                <% } %>
               </div>
               <button class="product-content-link">
                 <span><%= language.show[lan] %></span>
@@ -47,7 +59,7 @@
         <div class="product_modal-wrapper">
           <img
             class="product_modal-wrapper-img"
-            src="../assets/images/productes/1.png"
+            src="/files/<%= item.product_image %>"
             alt="img"
           />
           <svg
@@ -65,7 +77,8 @@
           </svg>
         </div>
       </div>
-      <div class="product wow animate__fadeInLeft">
+      <% }) %>
+      <!-- <div class="product wow animate__fadeInLeft">
         <div class="row">
           <div class="col-lg-5 mb-lg-0 mb-4 order-lg-2 order-1">
             <div class="product_image_wrapper">
@@ -338,7 +351,7 @@
             />
           </svg>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

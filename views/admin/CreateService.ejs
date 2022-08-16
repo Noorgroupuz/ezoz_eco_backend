@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
 
     <title>Document</title>
+    <script src="/assets/JavaScript/ckeditor.js"></script>
   </head>
   <body>
+    <%- include("AdminHeader.ejs") %>
     <div>
       <div class="myLoader">
         <div class="loadingio-spinner-ripple-6sk4j73oq33">
@@ -25,45 +27,64 @@
           </div>
         </div>
       </div>
-      <div class="container py-3">
+      <div class="container py-5">
         <div class="row">
-          <div class="col-lg-5 mb-2">
+          <div class="col-lg-5 mb-3">
             <div class="card bg-transparent border-none p-2">
-              <h5 class="bannerImage mb-1">Banner Image</h5>
+              <h5 class="bannerImage mb-1">Xizmat ishki rasm</h5>
               <input class="w-100 ms-auto service_banner_image" type="file" />
             </div>
             <hr />
             <div class="card bg-transparent border-none p-2">
-              <h5 class="productImage mb-1">Product Image</h5>
+              <h5 class="productImage mb-1">Xizmat rasmi</h5>
               <input class="w-100 ms-auto service_product_image" type="file" />
             </div>
           </div>
           <div class="col-lg-12">
+            <label for="service_title_ru"
+              ><h4 class="m-0">Xizmat nomi rus</h4></label
+            >
             <textarea
-              placeholder="service_title_ru"
+              id="service_title_ru"
+              placeholder="Service title ru"
               name="service_title_ru"
-              class="form-control mb-2 service_title_ru"
+              class="form-control mb-4 service_title_ru"
             ></textarea>
+            <label for="service_title_uz"
+              ><h4 class="m-0">Xizmat nomi uz</h4></label
+            >
+
             <textarea
-              placeholder="service_title_uz"
+              id="service_title_uz"
+              placeholder="Service title uz"
               name="service_title_uz"
-              class="form-control mb-2 service_title_uz"
+              class="form-control mb-4 service_title_uz"
             ></textarea>
-            <textarea
-              placeholder="service_text_ru"
+
+            <label for="myTextarea10"
+              ><h4 class="m-0">Xizmat haqida ma'lumot rus</h4></label
+            >
+            <div id="toolbar-container1"></div>
+            <div
+              style="border: 1px solid black"
+              placeholder="Service text ru"
               name="service_text_ru"
-              class="form-control mb-2 service_text_ru"
+              class="form-control mb-4 service_text_ru"
               id="myTextarea10"
-            ></textarea>
-            <p class="mb-4"></p>
-            <textarea
-              placeholder="service_text_uz"
+            ></div>
+            <label for="myTextarea11" class="mt-4"
+              ><h4 class="m-0">Xizmat haqida ma'lumot uz</h4></label
+            >
+            <div id="toolbar-container2"></div>
+            <div
+              style="border: 1px solid black"
+              placeholder="Service text uz"
               name="service_text_uz"
               class="form-control mb-2 service_text_uz"
               id="myTextarea11"
-            ></textarea>
-            <button class="btn btn-success d-block w-100 service_button">
-              Create
+            ></div>
+            <button class="btn btn-success mt-3 d-block w-100 service_button">
+              Yaratish
             </button>
           </div>
         </div>
@@ -71,7 +92,5 @@
     </div>
     <script src="/assets/JavaScript/toastify.js"></script>
     <script src="/assets/fetchRequests/createService.js"></script>
-    <script referrerpolicy="origin" src="/assets/JavaScript/tiny.js"></script>
-    <script src="/assets/JavaScript/tinymce.js"></script>
   </body>
 </html>

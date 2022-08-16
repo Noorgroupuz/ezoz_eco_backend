@@ -23,6 +23,8 @@
         .industry_img {
           width: 100%;
           transition: 0.3s;
+          height: 300px;
+          object-fit: cover;
         }
       }
       .industries_item-content {

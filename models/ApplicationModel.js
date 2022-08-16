@@ -17,7 +17,7 @@ module.exports = async (Sequelize, sequelize) => {
         allowNull: false,
       },
       message: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
     },

@@ -1,3 +1,5 @@
+let product_name_ru1 = document.querySelector(".product_name_ru");
+let product_name_uz1 = document.querySelector(".product_name_uz");
 let product_title_ru1 = document.querySelector(".product_title_ru");
 let product_title_uz1 = document.querySelector(".product_title_uz");
 let product_description_ru1 = document.querySelector(".product_description_ru");
@@ -14,25 +16,31 @@ let loader = document.querySelector(".myLoader");
 const productBox = document.querySelector(".editProductBox");
 let product = productBox.dataset.product_date;
 product = JSON.parse(product);
-console.log(product);
+product_name_ru1.value = product.product_name_ru;
+product_name_uz1.value = product.product_name_uz;
 product_title_ru1.value = product.product_title_ru;
 product_title_uz1.value = product.product_title_uz;
 product_description_ru1.value = product.product_description_ru;
 product_description_uz1.value = product.product_description_uz;
 productImg.src = "/files/" + product.product_image;
-
+let img = "";
 btn_close.addEventListener("click", () => {
   document.querySelector(".imgWrapper").remove();
-  product.product_image=""
+  img = product.product_image;
+  product.product_image = "";
 });
 product_button.addEventListener("click", async () => {
   const formData = new FormData();
 
+  let product_name_ru = product_name_ru1.value;
+  let product_name_uz = product_name_uz1.value;
   let product_title_ru = product_title_ru1.value;
   let product_title_uz = product_title_uz1.value;
   let product_description_ru = product_description_ru1.value;
   let product_description_uz = product_description_uz1.value;
   if (
+    !product_name_ru ||
+    !product_name_uz ||
     !product_title_ru ||
     !product_title_uz ||
     !product_description_ru ||
@@ -42,6 +50,8 @@ product_button.addEventListener("click", async () => {
     return alert("Iltimos malumotlarni to'ldiring");
   }
   loader.style.display = "flex";
+  formData.append("product_name_ru", product_name_ru);
+  formData.append("product_name_uz", product_name_uz);
   formData.append("product_title_ru", product_title_ru);
   formData.append("product_title_uz", product_title_uz);
   formData.append("product_description_ru", product_description_ru);
@@ -49,11 +59,9 @@ product_button.addEventListener("click", async () => {
   if (product_image1.files[0]) {
     formData.append("image", product_image1.files[0]);
   }
-  if (product.product_image) {
-    formData.append("oldImage", product.product_image);
+  if (img) {
+    formData.append("oldImage", img);
   }
-  // console.log(product_image.files[0]);
-  // console.log(product.product_image);
   const option = {
     method: "put",
     body: formData,

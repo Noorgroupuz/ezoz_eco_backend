@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/assets/styles/main.css" />
     <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
+    <link rel="stylesheet" href="/assets/styles/pag.css" />
     <link
       rel="stylesheet"
       href="/assets/styles/libraries/swiper.bundle.min.css"
@@ -15,17 +16,22 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="applications py-5 text-center">
-      <h1 class="text-center mb-4">Applications</h1>
+    <%- include("AdminHeader.ejs") %> <% var currentPage = currentPage || "" %>
+    <% var totalPage = totalPage || "" %>
+    <div
+      class="applications py-5 text-center totalPagebox"
+      data-totalPage="<%= totalPage %>"
+    >
+      <span class="currentPagebox" data-currentPage="<%= currentPage %>"></span>
+      <h1 class="text-center mb-4">Arizalar</h1>
       <div class="container">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Name</th>
+              <th scope="col">Ismi</th>
               <th scope="col">Number</th>
-              <th scope="col">Message</th>
-              <th scope="col">Action</th>
+              <th scope="col">Xabar</th>
             </tr>
           </thead>
           <% var applications = applications || [] %>
@@ -36,61 +42,21 @@
               <td><%= item.name %></td>
               <td><%= item.number %></td>
               <td><%= item.message %></td>
-              <td class="d-flex">
-                <button
-                  onclick="deleteApplication('<%= item.application_id %>')"
-                  class="btn btn-danger ms-auto me-auto deleteProductButton"
-                >
-                  Detele
-                </button>
-              </td>
             </tr>
             <% }) %>
           </tbody>
         </table>
+        <nav
+          class="mx-auto d-flex align-items-center p-0 mt-5"
+          aria-label="Page navigation example"
+        >
+          <div class="pagination ms-auto me-auto">
+            <ul class="pag-list"></ul>
+          </div>
+        </nav>
       </div>
     </div>
   </body>
   <script src="/assets/JavaScript/toastify.js"></script>
-  <script>
-    const deleteApplication = async (id) => {
-      const option = {
-        method: "delete",
-      };
-      let response = await fetch(`/admin/application/${id}`, option);
-      response = await response.json();
-      if (response.ok) {
-        window.location.href = "/admin/applications";
-        Toastify({
-          text: "Application is deleted",
-          duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
-          newWindow: true,
-          close: true,
-          gravity: "top", // `top` or `bottom`
-          position: "right", // `left`, `center` or `right`
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "#198754",
-          },
-          onClick: function () {}, // Callback after click
-        }).showToast();
-      } else {
-        Toastify({
-          text: response.msg,
-          duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
-          newWindow: true,
-          close: true,
-          gravity: "top", // `top` or `bottom`
-          position: "right", // `left`, `center` or `right`
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "#fd7e14",
-          },
-          onClick: function () {}, // Callback after click
-        }).showToast();
-      }
-    };
-  </script>
+  <script src="/assets/JavaScript/pagination.js"></script>
 </html>

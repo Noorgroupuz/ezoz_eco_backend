@@ -1,4 +1,5 @@
 const removeImage = require("./removeImage");
+const uuid = require("uuid");
 
 const AdminProductController = {
   getProductes: async (req, res, next) => {
@@ -17,12 +18,16 @@ const AdminProductController = {
   createProduct: async (req, res, next) => {
     try {
       const {
+        product_name_ru,
+        product_name_uz,
         product_title_ru,
         product_title_uz,
         product_description_ru,
         product_description_uz,
       } = req.body;
       const product = await req.db.productes.create({
+        product_name_ru,
+        product_name_uz,
         product_title_ru,
         product_title_uz,
         product_description_ru,
@@ -39,14 +44,23 @@ const AdminProductController = {
   },
   getEditProduct: async (req, res, next) => {
     try {
-      const product = await req.db.productes.findOne({
-        where: {
-          product_id: req.params.id,
-        },
-      });
-      res.render("admin/EditProduct", {
-        product: product.dataValues,
-      });
+      const isMatch = uuid.validate(req.params.id);
+      if (isMatch) {
+        const product = await req.db.productes.findOne({
+          where: {
+            product_id: req.params.id,
+          },
+        });
+        if (product) {
+          res.render("admin/EditProduct", {
+            product: product.dataValues,
+          });
+        } else {
+          res.render("404", {});
+        }
+      } else {
+        res.render("404", {});
+      }
     } catch (error) {
       console.log(error.message);
       next(error);
@@ -55,6 +69,8 @@ const AdminProductController = {
   editProduct: async (req, res, next) => {
     try {
       const {
+        product_name_ru,
+        product_name_uz,
         product_title_ru,
         product_title_uz,
         product_description_ru,
@@ -69,6 +85,8 @@ const AdminProductController = {
       }
       const product = await req.db.productes.update(
         {
+          product_name_ru,
+          product_name_uz,
           product_title_ru,
           product_title_uz,
           product_description_ru,

@@ -12,10 +12,11 @@
       href="/assets/styles/libraries/swiper.bundle.min.css"
     />
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
+    <script src="/assets/JavaScript/ckeditor.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <% var service = service || {} %>
+    <%- include("AdminHeader.ejs") %> <% var service = service || {} %>
     <div
       data-service_date="<%= JSON.stringify(service) %>"
       class="editServiceBox"
@@ -28,11 +29,11 @@
           </div>
         </div>
       </div>
-      <div class="container py-3">
+      <div class="container py-5">
         <div class="row">
-          <div class="col-lg-5 mb-2">
+          <div class="col-lg-5 mb-4">
             <div class="card bg-transparent border-none p-2">
-              <h5 class="bannerImage mb-1">Banner Image</h5>
+              <h5 class="bannerImage mb-1">Xizmat ishki rasm</h5>
               <input class="w-100 ms-auto service_banner_image" type="file" />
               <hr class="mb-0" />
               <div class="bannerWrapper">
@@ -46,7 +47,7 @@
             </div>
             <hr />
             <div class="card bg-transparent border-none p-2">
-              <h5 class="productImage mb-1">Product Image</h5>
+              <h5 class="productImage mb-1">Xizmat rasmi</h5>
               <input class="w-100 ms-auto service_product_image" type="file" />
               <hr class="mb-0" />
               <div class="productWrapper">
@@ -60,7 +61,9 @@
             </div>
           </div>
           <div class="col-lg-6 offset-lg-1">
-            <label for="service_title_ru">service_title_ru</label>
+            <label for="service_title_ru"
+              ><h4 class="m-0">Xizmat nomi rus</h4></label
+            >
             <textarea
               id="service_title_ru"
               placeholder="service_title_ru"
@@ -69,7 +72,9 @@
               cols="30"
               rows="2"
             ></textarea>
-            <label for="service_title_uz">service_title_uz</label>
+            <label for="service_title_uz"
+              ><h4 class="m-0">Xizmat nomi uz</h4></label
+            >
             <textarea
               id="service_title_uz"
               placeholder="service_title_uz"
@@ -80,35 +85,40 @@
             ></textarea>
           </div>
           <div>
-            <label for="service_text_ru">service_text_ru</label>
-            <textarea
+            <label for="myTextarea10"
+              ><h4 class="m-0">Xizmat haqida ma'lumot rus</h4></label
+            >
+            <div id="toolbar-container1"></div>
+            <div
+              style="border: 1px solid black"
               placeholder="service_text_ru"
               name="service_text_ru"
               class="form-control mb-4 service_text_ru"
               cols="30"
               rows="2"
               id="myTextarea10"
-            ></textarea>
-            <label for="service_text_uz">service_text_uz</label>
-            <textarea
+            ></div>
+            <label for="myTextarea11" class="mt-4"
+              ><h4 class="m-0">Xizmat haqida ma'lumot uz</h4></label
+            >
+            <div id="toolbar-container2"></div>
+            <div
+              style="border: 1px solid black"
               placeholder="service_text_uz"
               name="service_text_uz"
               class="form-control mb-4 service_text_uz"
               cols="30"
               rows="2"
               id="myTextarea11"
-            ></textarea>
+            ></div>
 
-            <button class="btn btn-success d-block w-100 service_button">
-              Edit
+            <button class="btn btn-success d-block mt-3 w-100 service_button">
+              Tahrirlash
             </button>
           </div>
         </div>
       </div>
     </div>
-    <script src="/assets/JavaScript/tiny.js" referrerpolicy="origin"></script>
-    <script src="/assets/JavaScript/tinymce.js"></script>
-
     <script src="/assets/JavaScript/toastify.js"></script>
     <script src="/assets/fetchRequests/editService.js"></script>
   </body>

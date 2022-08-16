@@ -1,4 +1,5 @@
 const removeImage = require("./removeImage");
+const uuid = require("uuid");
 
 const AdminIndustryController = {
   getIndustries: async (req, res, next) => {
@@ -32,14 +33,23 @@ const AdminIndustryController = {
   },
   getEditIndustry: async (req, res, next) => {
     try {
-      const industry = await req.db.industries.findOne({
-        where: {
-          industry_id: req.params.id,
-        },
-      });
-      res.render("admin/EditIndustry", {
-        industry: industry.dataValues,
-      });
+      const isMatch = uuid.validate(req.params.id);
+      if (isMatch) {
+        const industry = await req.db.industries.findOne({
+          where: {
+            industry_id: req.params.id,
+          },
+        });
+        if (industry) {
+          res.render("admin/EditIndustry", {
+            industry: industry.dataValues,
+          });
+        } else {
+          res.render("404", {});
+        }
+      } else {
+        res.render("404", {});
+      }
     } catch (error) {
       console.log(error.message);
       next(error);

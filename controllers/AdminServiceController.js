@@ -1,4 +1,5 @@
 const removeImage = require("./removeImage");
+const uuid = require("uuid");
 
 const AdminServiceController = {
   getServices: async (req, res, next) => {
@@ -40,14 +41,23 @@ const AdminServiceController = {
   },
   getEditService: async (req, res, next) => {
     try {
-      const service = await req.db.services.findOne({
-        where: {
-          service_id: req.params.id,
-        },
-      });
-      res.render("admin/EditService", {
-        service: service.dataValues,
-      });
+      const isMatch = uuid.validate(req.params.id);
+      if (isMatch) {
+        const service = await req.db.services.findOne({
+          where: {
+            service_id: req.params.id,
+          },
+        });
+        if (service) {
+          res.render("admin/EditService", {
+            service: service.dataValues,
+          });
+        } else {
+          res.render("404", {});
+        }
+      } else {
+        res.render("404", {});
+      }
     } catch (error) {
       console.log(error.message);
       next(error);

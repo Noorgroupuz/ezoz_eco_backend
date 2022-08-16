@@ -17,11 +17,11 @@ module.exports = async (Sequelize, sequelize) => {
         allowNull: false,
       },
       service_text_ru: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       service_text_uz: {
-        type: Sequelize.STRING(),
+        type: Sequelize.TEXT(),
         allowNull: false,
       },
       service_product_image: {

@@ -13,29 +13,40 @@
   <div class="services_page-wrapper">
     <div class="container">
       <div class="row">
+        <% services.forEach(function(item, index){ %>
         <div
-          data-wow-delay="0"
-          data-wow-duration="0.5s"
+        data-wow-duration="0.5s"
+          data-wow-delay="<%= index*0.04 %>s"
           class="wow animate__fadeInUp col-md-4 col-sm-6 col-12 mb-sm-5 mb-4"
         >
-          <a class="text-decoration-none" href="/service">
+          <a
+            class="text-decoration-none"
+            href="/service/<%= item.service_id %>"
+          >
             <div class="services_page-wrapper-card">
               <div class="services_page-wrapper-card-img-box">
                 <img
                   class="services_page-wrapper-card-img"
-                  src="../assets/images/services/1.jpg"
+                  src="/files/<%= item.service_product_image %>"
                   alt="img"
                 />
               </div>
               <div class="services_page-wrapper-card-content">
+                <% if(lan === "uz") { %>
                 <p class="services_page-wrapper-card-content-title">
-                  Утилизация медицинских отходов
+                  <%= item.service_title_uz %>
                 </p>
+                <% } else { %>
+                <p class="services_page-wrapper-card-content-title">
+                  <%= item.service_title_ru %>
+                </p>
+                <% } %>
               </div>
             </div>
           </a>
         </div>
-        <div
+        <% }) %>
+        <!-- <div
           data-wow-delay="0.04s"
           data-wow-duration="0.5s"
           class="wow animate__fadeInUp col-md-4 col-sm-6 col-12 mb-sm-5 mb-4"
@@ -134,7 +145,7 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

@@ -1,0 +1,80 @@
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden !important;
+}
+
+.pagination {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pag-list {
+    display: flex;
+    list-style: none;
+    background-color: #ccc;
+    padding: 8px;
+    border-radius: 50px;
+}
+
+.pag-list li {
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500px;
+    cursor: pointer;
+    transition: all 0.3s ease
+}
+
+.pag-list li.numb {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.pag-list li .bx {
+    font-size: 20px;
+}
+
+.pag-list li.btp {
+    padding: 0 20px;
+}
+
+.pag-list li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pag-list li.prev {
+    border-radius: 25px 5px 5px 25px;
+}
+
+.pag-list li.next {
+    border-radius: 5px 25px 25px 5px;
+} 
+
+.pag-list li.dots {
+    font-size: 22px;
+    cursor: default;
+}
+
+.pag-list li.actived,
+.pag-list li.numb:hover,
+.pag-list li.btp:hover {
+    background-color: #fff;
+}

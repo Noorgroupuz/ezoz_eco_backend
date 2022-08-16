@@ -6,7 +6,6 @@ let loader = document.querySelector(".myLoader");
 
 create_button.addEventListener("click", async () => {
   const formData = new FormData();
-  console.log(1111);
 
   let name = name1.value;
   let number = number1.value;

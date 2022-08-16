@@ -9,6 +9,7 @@
       href="/assets/images/logo.svg"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="/assets/styles/libraries/contentStyles.css" />
     <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/styles/libraries/animateCss.css" />
     <link
@@ -49,7 +50,7 @@
             </div>
             <div class="header_one_items--logo">
               <img src="/assets/images/logo.svg" alt="logo" />
-              <h2>E’ZOZ ECO MED SERVIS</h2>
+              <a href="/" class="text-decoration-none"><h2>E’ZOZ ECO MED SERVIS</h2></a>
             </div>
             <div class="header_one_items--edit">
               <button class="header_one_items--edit-button">
@@ -130,12 +131,12 @@
             <a href="#">
               <img src="/assets/images/logo.svg" alt="logo" />
             </a>
-            <select id="language1" name="lang">
+            <!-- <select id="language1" name="lang">
               <option <% if(lan === "ru") { %> selected <% } %> value="ru">
                 <%= language.navbar.languages.ru[lan] %>
               </option>
               <option <% if(lan === "uz") { %> selected <% } %> value="uz"><%= language.navbar.languages.uz[lan] %></option>
-            </select>
+            </select> -->
             <button class="header_modal_wrapper-header-closer">
               <svg
                 width="30"

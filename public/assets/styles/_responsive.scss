@@ -1,9 +1,12 @@
 @media screen and(max-width:992px) {
   .header {
     &_two {
-      &-links,
-      &-language {
+      &-links{
         display: none;
+      }
+      &-language{
+        margin-left: auto;
+        margin-right: 10px;
       }
       &-hidder {
         display: block;

@@ -2,9 +2,7 @@ let number_input = document.querySelector(".application_form_number");
 let number_input2 = document.querySelector(".header_edit_modal-form_number");
 let oldValue = "";
 let oldValue2 = "";
-console.log();
 number_input.addEventListener("input", (e) => {
-  console.log(987);
   if (e.data !== "e" && oldValue.length < 9) {
     oldValue = e.target.value;
     number_input.value = oldValue;

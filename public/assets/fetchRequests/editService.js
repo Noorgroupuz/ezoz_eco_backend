@@ -6,6 +6,8 @@ let service_banner_image1 = document.querySelector(".service_banner_image");
 let service_product_image1 = document.querySelector(".service_product_image");
 let service_button = document.querySelector(".service_button");
 let edit = document.querySelector(".edit");
+let img1 = "";
+let img2 = "";
 
 let btn_banner_close = document.querySelector(".btn-banner-close");
 let btn_product_close = document.querySelector(".btn-product-close");
@@ -22,32 +24,53 @@ service_title_ru1.value = service.service_title_ru;
 service_title_uz1.value = service.service_title_uz;
 // service_text_ru1.value = service.service_text_ru;
 // service_text_uz1.value = service.service_text_uz;
-setTimeout(() => {
-  tinymce.get("myTextarea10").setContent(service.service_text_ru);
-  tinymce.get("myTextarea11").setContent(service.service_text_uz);
-}, 1000);
+// setTimeout(() => {
+//   tinymce.get("myTextarea10").setContent(service.service_text_ru);
+//   tinymce.get("myTextarea11").setContent(service.service_text_uz);
+// }, 1000);
 bannerImg.src = "/files/" + service.service_banner_image;
 productImg.src = "/files/" + service.service_product_image;
 
 btn_banner_close.addEventListener("click", () => {
   document.querySelector(".bannerWrapper").remove();
+  img1 = service.service_banner_image;
   service.service_banner_image = "";
 });
 btn_product_close.addEventListener("click", () => {
   document.querySelector(".productWrapper").remove();
+  img2 = service.service_product_image;
   service.service_product_image = "";
 });
+
+let editor1;
+let editor2;
+DecoupledEditor.create(document.querySelector("#myTextarea10"))
+  .then((editor) => {
+    editor.setData(service.service_text_ru);
+    editor1 = editor;
+    const toolbarContainer = document.querySelector("#toolbar-container1");
+    toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+DecoupledEditor.create(document.querySelector("#myTextarea11"))
+  .then((editor) => {
+    editor.setData(service.service_text_uz);
+    editor2 = editor;
+    const toolbarContainer = document.querySelector("#toolbar-container2");
+    toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 service_button.addEventListener("click", async () => {
   const formData = new FormData();
 
   let service_title_ru = service_title_ru1.value;
   let service_title_uz = service_title_uz1.value;
-  let service_text_ru = tinymce
-    .get("myTextarea10")
-    .getContent(service.service_text_ru);
-  let service_text_uz = tinymce
-    .get("myTextarea11")
-    .getContent(service.service_text_uz);
+  let service_text_ru = editor1.getData();
+  let service_text_uz = editor2.getData();
   if (
     !service_title_ru ||
     !service_title_uz ||
@@ -69,11 +92,11 @@ service_button.addEventListener("click", async () => {
   if (service_product_image1.files[0]) {
     formData.append("productImage", service_product_image1.files[0]);
   }
-  if (service.service_banner_image) {
-    formData.append("oldBannerImage", service.service_banner_image);
+  if (img1) {
+    formData.append("oldBannerImage", img1);
   }
-  if (service.service_product_image) {
-    formData.append("oldProductImage", service.service_product_image);
+  if (img2) {
+    formData.append("oldProductImage", img2);
   }
   const option = {
     method: "put",

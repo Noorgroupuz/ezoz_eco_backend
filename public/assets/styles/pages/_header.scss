@@ -94,7 +94,10 @@
       align-items: center;
       &-item {
         & + & {
-          margin-left: 40px;
+          margin-left: 35px;
+          @media screen and(max-width:1400px) {
+            margin-left: 25px;
+          }
           @media screen and(max-width:1200px) {
             margin-left: 16px;
           }
@@ -114,7 +117,7 @@
         a {
           font-family: "Roboto";
           font-style: normal;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 16px;
           line-height: 16px;
           letter-spacing: -0.02em;

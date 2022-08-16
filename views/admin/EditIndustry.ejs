@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body><%- include("AdminHeader.ejs") %>
     <% var industry = industry || {} %>
     <div
       data-industry_date="<%= JSON.stringify(industry) %>"
@@ -31,11 +31,13 @@
       <div class="container py-3">
         <div class="row">
           <div class="col-lg-5 mb-2">
-            <div class="card bg-transparent border-none">
+            <div class="card bg-transparent border-none p-2">
+              <h5 class="mb-1">Sanoat yangi rasmi</h5>
               <input class="w-100 ms-auto industry_image" type="file" />
             </div>
             <hr />
             <div class="imgWrapper">
+              <h5 class="mb-1">Sanoat eski rasmi</h5>
               <div class="d-flex mt-2 justify-content-between">
                 <img style="width: 100px" class="industryImg" alt="" />
                 <button class="btn btn-close bg-white"></button>
@@ -44,25 +46,25 @@
             </div>
           </div>
           <div class="col-lg-6 offset-lg-1">
-            <label for="industry_title_ru">industry_title_ru</label>
+            <label for="industry_title_ru">Sanoat nomi rus</label>
             <textarea
               id="industry_title_ru"
-              placeholder="industry_title_ru"
+              placeholder="Sanoat title ru"
               name="industry_title_ru"
               class="form-control mb-4 industry_title_ru"
               cols="30"
               rows="2"
             ></textarea>
-            <label for="industry_title_uz">industry_title_uz</label>
+            <label for="industry_title_uz">Sanoat nomi uz</label>
             <textarea
               id="industry_title_uz"
-              placeholder="industry_title_uz"
+              placeholder="Sanoat title uz"
               name="industry_title_uz"
               class="form-control mb-4 industry_title_uz"
               cols="30"
               rows="2"
             ></textarea>
-            
+
             <button class="btn btn-success d-block w-100 industry_button">
               Edit
             </button>

@@ -8,66 +8,74 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 
 const router = require("express").Router();
 
-router.get("/", (req, res, next) => {
+router.get("/", adminMiddleware, (req, res, next) => {
   res.render("admin/AdminDashboard");
 });
 
 // Productes
 router
   .route("/productes")
-  .get(AdminProductController.getProductes)
-  .post(upload.fileStore, AdminProductController.createProduct);
+  .get(adminMiddleware, AdminProductController.getProductes)
+  .post(
+    adminMiddleware,
+    upload.fileStore,
+    AdminProductController.createProduct
+  );
 
 router
   .route("/product/:id")
   .get(AdminProductController.getEditProduct)
-  .put(upload.fileStore, AdminProductController.editProduct)
-  .delete(AdminProductController.deleteProduct);
+  .put(adminMiddleware, upload.fileStore, AdminProductController.editProduct)
+  .delete(adminMiddleware, AdminProductController.deleteProduct);
 
-router.route("/createProduct").get((req, res) => {
+router.route("/createProduct").get(adminMiddleware, (req, res) => {
   res.render("admin/CreateProduct");
 });
 
 // Industries
 router
   .route("/industries")
-  .get(AdminIndustryController.getIndustries)
-  .post(upload.fileStore, AdminIndustryController.createIndustry);
+  .get(adminMiddleware, AdminIndustryController.getIndustries)
+  .post(
+    adminMiddleware,
+    upload.fileStore,
+    AdminIndustryController.createIndustry
+  );
 
 router
   .route("/industry/:id")
-  .get(AdminIndustryController.getEditIndustry)
-  .put(upload.fileStore, AdminIndustryController.editIndustry)
-  .delete(AdminIndustryController.deleteIndustry);
+  .get(adminMiddleware, AdminIndustryController.getEditIndustry)
+  .put(adminMiddleware, upload.fileStore, AdminIndustryController.editIndustry)
+  .delete(adminMiddleware, AdminIndustryController.deleteIndustry);
 
-router.route("/createIndustry").get((req, res) => {
+router.route("/createIndustry").get(adminMiddleware, (req, res) => {
   res.render("admin/CreateIndustry");
 });
 
 // Services
 router
   .route("/services")
-  .get(AdminServiceController.getServices)
-  .post(upload.service, AdminServiceController.createService);
+  .get(adminMiddleware, AdminServiceController.getServices)
+  .post(adminMiddleware, upload.service, AdminServiceController.createService);
 
 router
   .route("/service/:id")
-  .get(AdminServiceController.getEditService)
-  .put(upload.service, AdminServiceController.editService)
-  .delete(AdminServiceController.deleteService);
+  .get(adminMiddleware, AdminServiceController.getEditService)
+  .put(adminMiddleware, upload.service, AdminServiceController.editService)
+  .delete(adminMiddleware, AdminServiceController.deleteService);
 
-router.route("/createService").get((req, res) => {
+router.route("/createService").get(adminMiddleware, (req, res) => {
   res.render("admin/CreateService");
 });
 
 // Application
 router
   .route("/applications")
-  .get(AdminApplicationController.getApplications)
+  .get(adminMiddleware, AdminApplicationController.getApplications)
   .post(AdminApplicationController.createApplication);
-router
-  .route("/application/:id")
-  .delete(AdminApplicationController.deleteApplication);
+// router
+//   .route("/application/:id")
+//   .delete(adminMiddleware, AdminApplicationController.deleteApplication);
 
 // Login
 router
@@ -82,6 +90,6 @@ router.post("/register", AdminController.register);
 router.get("/register", (req, res) => {
   res.render("admin/Register", {});
 });
-router;
+router.get("/logout", AdminController.logout);
 
 module.exports = router;

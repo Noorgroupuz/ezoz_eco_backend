@@ -14,19 +14,21 @@
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body><%- include("AdminHeader.ejs") %>
     <div class="productes py-5">
-      <h1 class="text-center mb-4">Productes</h1>
+      <h1 class="text-center mb-4">Mahsulotlar</h1>
       <div class="container">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Image</th>
-              <th scope="col">Product title_ru</th>
-              <th scope="col">Product title_uz</th>
-              <th scope="col">Product description_ru</th>
-              <th scope="col">Product description_uz</th>
+              <th scope="col">Rasmi</th>
+              <th scope="col">Mahsulot nomi rus</th>
+              <th scope="col">Mahsulot nomi rus</th>
+              <th scope="col">Mahsulot title ru</th>
+              <th scope="col">Mahsulot title uz</th>
+              <th scope="col">Mahsulot ta'rifi ru</th>
+              <th scope="col">Mahsulot ta'rifi uz</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -42,6 +44,8 @@
                   alt="img"
                 />
               </td>
+              <td><%= item.product_name_ru %></td>
+              <td><%= item.product_name_uz %></td>
               <td><%= item.product_title_ru %></td>
               <td><%= item.product_title_uz %></td>
               <td><%= item.product_description_ru %></td>

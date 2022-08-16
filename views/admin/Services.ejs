@@ -15,17 +15,20 @@
     <title>Document</title>
   </head>
   <body>
+    <%- include("AdminHeader.ejs") %>
     <div class="productes py-5">
-      <h1 class="text-center mb-4">Services</h1>
+      <h1 class="text-center mb-4">Xizmatlar</h1>
       <div class="container">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Banner image</th>
-              <th scope="col">Product image</th>
-              <th scope="col">Service text_ru</th>
-              <th scope="col">Service text_uz</th>
+              <th scope="col">Xizmat ishki rasm</th>
+              <th scope="col">Xizmat rasmi</th>
+              <th scope="col">Xizmat nomi rus</th>
+              <th scope="col">Xizmat nomi uz</th>
+              <th scope="col">Xizmat haqida rus</th>
+              <th scope="col">Xizmat haqida uz</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -48,6 +51,8 @@
                   alt="img"
                 />
               </td>
+              <td><%- item.service_title_ru %></td>
+              <td><%- item.service_title_uz %></td>
               <td><%- item.service_text_ru %></td>
               <td><%- item.service_text_uz %></td>
               <td class="d-flex">

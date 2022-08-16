@@ -7,10 +7,10 @@ const AdminController = {
       const { admin_email, admin_password } = req.body;
       const hashPass = generateHash(admin_password);
       const admin = await req.db.admins.findOne({
-        where: {   
+        where: {
           admin_email,
         },
-      }); 
+      });
       if (admin) {
         res.render("admin/Register", {
           ok: false,
@@ -81,11 +81,18 @@ const AdminController = {
       }
 
       res.cookie("token", token, {
-        maxAge: 900000,
         httpOnly: true,
       });
-      console.log(1);
-      res.redirect("/");
+      res.redirect("/admin");
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  },
+  logout: async (req, res, next) => {
+    try {
+      res.clearCookie("token");
+      res.json({ ok: true });
     } catch (error) {
       console.log(error);
       next(error);

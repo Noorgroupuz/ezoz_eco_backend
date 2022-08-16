@@ -1,5 +1,5 @@
 .services_page {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   &-wrapper {
     padding: 130px 0;
     @media screen and(max-width:576px) {
@@ -21,8 +21,13 @@
         border-radius: 10px 10px 0 0;
         overflow: hidden;
         img {
+          object-fit: cover;
           transition: 0.3s;
           width: 100%;
+          height: 332px;
+          @media screen and(max-width:576px) {
+            height: 300px;
+          }
         }
       }
       &-content {
