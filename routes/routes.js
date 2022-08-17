@@ -7,9 +7,6 @@ module.exports = async function (app) {
   try {
     app.use("/", HomeRoute);
     app.use("/admin", AdminRoute);
-    app.get("/test", (req, res) => {
-      res.render("test");
-    });
 
     app.use((req, res) => {
       res.render("404", {});

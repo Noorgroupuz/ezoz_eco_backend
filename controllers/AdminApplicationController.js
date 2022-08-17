@@ -4,7 +4,7 @@ const AdminApplicationController = {
   getApplications: async (req, res, next) => {
     try {
       const currentPage = +req.query.page || 1;
-      const limit = 4;
+      const limit = 15;
       const offset = limit * (currentPage - 1);
 
       let count = await req.db.applications.count();
@@ -36,7 +36,7 @@ const AdminApplicationController = {
       });
       await axios.get(
         encodeURI(
-          `https://api.telegram.org/bot${token}/sendMessage?chat_id=${group_id}&text=🆕Yangi buyurtma\n\n📞 Telefon raqami: ${number}\n\n🤵 Ismi: ${name} \n\n📝 Ariza: ${message} \n\nBuyurtmani ko'rish admin panelga kiring: https://ezoz-eco.uz/admin/applications`
+          `https://api.telegram.org/bot${token}/sendMessage?chat_id=${group_id}&text=🆕Yangi buyurtma\n\n📞 Telefon raqami: ${number}\n\n🤵 Ismi: ${name} \n\n📝 Ariza: ${message} \n\nBuyurtmani ko'rish admin panelga kiring: https://ezozeco.uz/admin/applications`
         )
       );
       res.json({

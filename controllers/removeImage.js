@@ -6,6 +6,7 @@ const removeImage = async (newImage, oldImage) => {
       name = "./public/files/" + name;
       await fs.unlink(name, (err) => {
         if (err) {
+          
           return console.log(err);
         }
         console.log("Rasm O'chirildi");

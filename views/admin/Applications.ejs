@@ -38,7 +38,7 @@
           <tbody>
             <% applications.map((item, index)=>{ %>
             <tr>
-              <th scope="row"><%= index + 1 %></th>
+              <th scope="row"><%= (currentPage-1) * 15 + index + 1 %></th>
               <td><%= item.name %></td>
               <td><%= item.number %></td>
               <td><%= item.message %></td>

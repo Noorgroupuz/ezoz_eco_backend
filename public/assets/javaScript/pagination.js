@@ -11,7 +11,7 @@ function element(page) {
   let afterPages = page + 1;
   let activeLi;
 
-  if (page > 2) {
+  if (page > 2 && totalPage !== 4 && totalPage !== 3) {
     liTag += `<li class="numb" onclick = "element(1)"><span>
       <a class="text-decoration-none text-dark d-block w-100 h-100" href=/admin/applications?page=1>1</a>
     </span></li>`;
@@ -22,17 +22,21 @@ function element(page) {
 
   // before
 
-  if (page == totalPage) {
+  if (page == totalPage && page !== 1 && page !== 2) {
     beforePages = beforePages - 2;
-  } else if (page == totalPage - 1) {
+    console.log(1);
+  } else if (page == totalPage - 1 && page !== 1 && page !== 2) {
+    console.log(2);
     beforePages = beforePages - 1;
   }
 
   // after
 
   if (page == 1) {
+    console.log(3);
     afterPages = afterPages + 2;
   } else if (page == 2) {
+    console.log(4);
     afterPages = afterPages + 1;
   }
 
@@ -53,10 +57,11 @@ function element(page) {
     liTag += `<li class="numb ${activeLi}" onclick = "element(${pageLength})"><span><a class="text-decoration-none text-dark d-block w-100 h-100" href=/admin/applications?page=${pageLength}>
     ${pageLength}</a></span></li>`;
   }
-  if (page < totalPage - 1) {
+  if (page < totalPage - 1 && totalPage !== 4&& totalPage !== 3) {
     if (page < totalPage - 2) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
+
     liTag += `<li class="numb" onclick = "element(${totalPage})"><span><a class="text-decoration-none text-dark d-block w-100 h-100" href=/admin/applications?page=${totalPage}>
     ${totalPage}</a></span></li>`;
   }
