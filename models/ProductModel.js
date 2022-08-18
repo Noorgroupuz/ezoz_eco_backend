@@ -26,11 +26,11 @@ module.exports = async (Sequelize, sequelize) => {
       },
       product_description_ru: {
         type: Sequelize.TEXT(),
-        allowNull: false,
+        allowNull: true,
       },
       product_description_uz: {
         type: Sequelize.TEXT(),
-        allowNull: false,
+        allowNull: true,
       },
       product_image: {
         type: Sequelize.STRING(),

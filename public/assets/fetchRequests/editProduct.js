@@ -43,8 +43,6 @@ product_button.addEventListener("click", async () => {
     !product_name_uz ||
     !product_title_ru ||
     !product_title_uz ||
-    !product_description_ru ||
-    !product_description_uz ||
     !(product.product_image || product_image1.files[0])
   ) {
     return alert("Iltimos malumotlarni to'ldiring");

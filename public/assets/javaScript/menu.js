@@ -57,3 +57,11 @@ document
       .querySelector(".header_edit_modal")
       .classList.remove("header_edit_modal-open");
   });
+
+document.addEventListener("readystatechange", () => {
+  document.querySelector(".mainLoader").style.opacity = "0";
+  document.querySelector(".mainLoader").style.zIndex = "-5";
+  setTimeout(() => {
+    document.querySelector(".mainLoader").style.display = "none";
+  }, 1000);
+});

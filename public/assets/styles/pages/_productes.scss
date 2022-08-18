@@ -20,7 +20,7 @@
         width: 100%;
         border-radius: 10px;
         height: 290px;
-        object-fit: cover;
+        object-fit: contain;
         position: relative;
         display: block;
         @media screen and(max-width:991px) {
