@@ -20,6 +20,19 @@ module.exports = async function AdminMiddleware(req, res, next) {
       return;
     }
 
+    let admin = await req.db.admins.findOne({
+      where: {
+        admin_id: token.admin_id,
+      },
+    });
+    if (!admin) {
+      res.render("admin/Login", {
+        ok: false,
+        message: "Admin not found",
+      });
+      return;
+    }
+
     next();
   } catch (error) {
     console.log("adminMid err: " + error);
