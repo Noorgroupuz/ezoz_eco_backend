@@ -123,6 +123,7 @@ const PagesController = {
             service_id: req.params.id,
           },
         });
+        console.log(service);
         if (service) {
           res.render("service", {
             lan: req.language,

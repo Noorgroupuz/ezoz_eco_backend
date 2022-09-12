@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<% if(lan ==="ru") { %>ru<% } else {%>uz <% } %> "  >
+
+  <% var service = service || {}  %> 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,10 +12,17 @@
       type="image/x-icon"
     />
     <link rel="alternate" href="https://ezozeco.uz" hreflang="ru" />
+    <% if(service.dataValues) { %> 
+      <meta
+      name="description"
+    content="<% if(lan ==="uz") { %> <%- service.dataValues.service_text_uz  %> <% } else { %><%- service.dataValues.service_text_ru  %> <% } %>"
+    />
+    <% } else { %> 
     <meta
       name="description"
-      content="Компания Е'ZOZ ECO MED SERVIS крупная организация предлагающая сбор, вывоз и утилизацию любых типов отходов в г.Ташкенте а также по всему Узбекистану"
+      content="<% if(lan === "uz") { %>E'ZOZ ECO MED SERVIS акцияси Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир. <% } else { %>E'ZOZ ECO MED SERVIS акцияси Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир. <% } %>"
     />
+    <% } %> 
     <meta name="robots" content="index, follow" />
     <meta name="AdsBot-Google" content="index" />
     <meta name="googlebot" content="noindex">
@@ -30,23 +39,54 @@
     <meta property="og:site_name" content="Ezozeco" />
     <meta property="og:locale" content="uz_Uz" />
     <meta property="og:type" content="website" />
+    <% if(service.dataValues) { %> 
     <meta
+      property="og:title"
+      content="E'zoz Eco - <% if(lan ==="uz") { %> <%- service.dataValues.service_title_uz  %> <% } else { %><%- service.dataValues.service_title_ru  %> <% } %>"
+    />
+    <% } else { %>
+      <meta
       property="og:title"
       content="Крупная организация, занимающаяся сбором, вывозом и утилизацией всех видов отходов. "
     />
-    <meta
-      property="og:description"
-      content="Компания Е'ZOZ ECO MED SERVIS крупная организация предлагающая сбор, вывоз и утилизацию любых типов отходов в г.Ташкенте а также по всему Узбекистану. "
-    />
+      <% } %> 
+
+    <% if(service.dataValues) { %> 
+      <meta
+        property="og:description"
+        content="E'zoz Eco - <% if(lan ==="uz") { %> <%- service.dataValues.service_text_uz  %> <% } else { %><%- service.dataValues.service_text_ru  %> <% } %>"
+      />
+    <% } else { %>
+      <meta
+        property="og:description"
+        content="<% if(lan === "uz") { %>E'ZOZ ECO MED SERVIS акцияси Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир. <% } else { %>E'ZOZ ECO MED SERVIS акцияси Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир. <% } %>"
+      />
+    <% } %> 
     <meta name="twitter:card" content="summary" />
+
+    <% if(service.dataValues) { %> 
     <meta
+      name="twitter:title"
+      content="E'zoz Eco - <% if(lan ==="uz") { %> <%- service.dataValues.service_title_uz  %> <% } else { %><%- service.dataValues.service_title_ru  %> <% } %>"
+    />
+    <% } else { %> 
+      <meta
       name="twitter:title"
       content="Крупная организация, занимающаяся сбором, вывозом и утилизацией всех видов отходов. "
     />
-    <meta
-      name="twitter:description"
-      content="Компания Е'ZOZ ECO MED SERVIS крупная организация предлагающая сбор, вывоз и утилизацию любых типов отходов в г.Ташкенте а также по всему Узбекистану. "
-    />
+    <% } %> 
+
+    <% if(service.dataValues) { %> 
+      <meta
+        name="twitter:description"
+        content="E'zoz Eco - <% if(lan ==="uz") { %> <%- service.dataValues.service_text_uz  %> <% } else { %><%- service.dataValues.service_text_ru  %> <% } %>"
+      />
+    <% } else { %>
+      <meta
+        name="twitter:description"
+        content="<% if(lan === "uz") { %>E'ZOZ ECO MED SERVIS акцияси Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир. <% } else { %>E'ZOZ ECO MED SERVIS акцияси Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир. <% } %>"
+      />
+    <% } %> 
 
     <link rel="stylesheet" href="/assets/styles/libraries/contentStyles.css" />
     <link rel="stylesheet" href="/assets/styles/libraries/bootstrap.min.css" />
@@ -57,9 +97,69 @@
     />
     <link rel="stylesheet" href="/assets/styles/libraries/toastify.css" />
     <link rel="stylesheet" href="/assets/styles/main.css" />
-    <title>E'zoz Eco</title>
+    <% if(service.dataValues) { %> 
+      <title>E'zoz Eco - <% if(lan ==="uz") { %> <%- service.dataValues.service_title_uz  %> <% } else { %><%- service.dataValues.service_title_ru  %> <% } %></title>
+    <% } else { %>
+      <% if(lan === "ru") { %> 
+        <title>E'zoz Eco - крупная организация предлагающая сбор, вывоз и утилизацию любых типов отходов в г.Ташкенте а также по всему Узбекистану</title>
+      <% } else { %>
+        <title>E'zoz Eco - Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир.</title>
+      <% } %> 
+    <% } %> 
+    <!-- Search console google -->
+    <meta name="google-site-verification" content="mX0dqJh6JdWZvRL0W38p2of3XSB5yaAGxATPJ3UisDU" />
+    <!-- end Search console google -->
+    
+     <!-- Search console yandex -->
+    <meta name="yandex-verification" content="a5fd868685224876" />
+    <!-- end Search console yandex -->  
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KNF2C4N');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      var z = null;m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(90321720, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+      });
+    </script>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4P1QP9QBL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E4P1QP9QBL');
+    </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNF2C4N"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+   <!-- Yandex.Metrika counter -->
+      <noscript><div><img src="https://mc.yandex.ru/watch/90321720" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+  <% if(lan === "ru") { %> 
+    <!-- <h1>E'zoz Eco - крупная организация предлагающая сбор, вывоз и утилизацию любых типов отходов в г.Ташкенте а также по всему Узбекистану</h1> -->
+  <% } else { %>
+    <!-- <h1>E'zoz Eco - Тошкент шахри ва бутун Ўзбекистон бўйлаб хар қандай турдаги чиқиндиларни йиғиш, олиб чиқиш ва утилизация қилишни таклиф қилувчи йирик ташкилотдир.</h1> -->
+  <% } %> 
     <header class="header">
       <div class="myLoader">
         <div class="loadingio-spinner-ripple-6sk4j73oq33">

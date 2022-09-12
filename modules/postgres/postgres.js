@@ -19,7 +19,7 @@ const postgress = async () => {
     db.applications = await ApplicationModel(Sequelize, sequelize);
 
     console.log("DB is connected");
-    // await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
     return db;
   } catch (error) {
     console.log("Sql error: ", error);
