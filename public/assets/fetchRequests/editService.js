@@ -6,7 +6,7 @@ let service_banner_image1 = document.querySelector(".service_banner_image");
 let service_product_image1 = document.querySelector(".service_product_image");
 let service_button = document.querySelector(".service_button");
 let edit = document.querySelector(".edit");
-let img1 = "";
+let img1 = ""; 
 let img2 = "";
 
 let btn_banner_close = document.querySelector(".btn-banner-close");
@@ -71,14 +71,7 @@ service_button.addEventListener("click", async () => {
   let service_title_uz = service_title_uz1.value;
   let service_text_ru = editor1.getData();
   let service_text_uz = editor2.getData();
-  if (
-    !service_title_ru ||
-    !service_title_uz ||
-    !service_text_ru ||
-    !service_text_uz ||
-    !(service.service_banner_image || service_banner_image1.files[0]) ||
-    !(service.service_product_image || service_product_image1.files[0])
-  ) {
+  if (!service_title_ru || !service_title_uz || !service_text_ru || !service_text_uz || !(service.service_banner_image || service_banner_image1.files[0]) || !(service.service_product_image || service_product_image1.files[0])) {
     return alert("Iltimos malumotlarni to'ldiring");
   }
   loader.style.display = "flex";
