@@ -36,7 +36,7 @@ const AdminApplicationController = {
       });
       await axios.get(
         encodeURI(
-          `https://api.telegram.org/bot${token}/sendMessage?chat_id=${group_id}&text=🆕Yangi buyurtma\n\n📞 Telefon raqami: ${number}\n\n🤵 Ismi: ${name} \n\n📝 Ariza: ${message} \n\nBuyurtmani ko'rish admin panelga kiring: https://ezozeco.uz/admin/applications`
+          `https://api.telegram.org/bot${token}/sendMessage?chat_id=${group_id}&text=🆕Yangi buyurtma\n\n📞 Telefon raqami: ${number}\n\n🤵 Ismi: ${name} \n\n📝 Ariza: ${message} \n\nBuyurtmani ko'rish admin panelga kiring: https://ezozmed.uz/admin/applications`
         )
       );
       res.json({
