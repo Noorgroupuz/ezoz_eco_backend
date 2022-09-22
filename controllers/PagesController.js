@@ -104,7 +104,7 @@ const PagesController = {
       const applications = await req.db.applications.findAll({
         order: [["createdAt", "DESC"]],
       });
-      res.render("git", {
+      res.render("uzbekistan", {
         lan: req.language,
         language,
         applications,
