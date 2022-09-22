@@ -24,19 +24,15 @@ function element(page) {
 
   if (page == totalPage && page !== 1 && page !== 2) {
     beforePages = beforePages - 2;
-    console.log(1);
   } else if (page == totalPage - 1 && page !== 1 && page !== 2) {
-    console.log(2);
     beforePages = beforePages - 1;
   }
 
   // after
 
   if (page == 1) {
-    console.log(3);
     afterPages = afterPages + 2;
   } else if (page == 2) {
-    console.log(4);
     afterPages = afterPages + 1;
   }
 
