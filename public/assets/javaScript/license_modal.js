@@ -15,5 +15,6 @@ licenseBtns.forEach((btn, index) => {
   });
 });
 licenseModalCloser.addEventListener("click", () => {
+  license_modal_img.src = "";
   license_modal.classList.add("license_modal-closed");
 });
