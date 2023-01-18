@@ -212,12 +212,18 @@
       </div>
       <div class="header_two sticky-two">
         <div class="container">
-          <div class="header_two-logo">
+          <!-- <div class="header_two-logo">
             <a href="/">
               <img src="/assets/images/logo.svg" alt="logo" />
             </a>
+          </div> -->
+          <div class="header_two-links-item header_two-links-item_single">
+            <a href="/services"><%= language.navbar.home_link[lan] %></a>
           </div>
           <div class="header_two-links">
+            <div class="header_two-links-item">
+              <a href="/services"><%= language.navbar.home_link[lan] %></a>
+            </div>
             <div class="header_two-links-item">
               <a href="/services"><%= language.navbar.links.item1[lan] %></a>
             </div>
@@ -266,9 +272,10 @@
       <div class="header_modal">
         <div class="header_modal_wrapper">
           <div class="header_modal_wrapper-header">
-            <a href="#">
+            <a href="/">
               <img src="/assets/images/logo.svg" alt="logo" />
             </a>
+            <a class="header_modal_wrapper-header_home_link" href="/"><%= language.navbar.home_link[lan] %></a>
             <button class="header_modal_wrapper-header-closer">
               <svg
                 width="30"
@@ -293,7 +300,7 @@
             <a href="/uzbekistan"><%= language.navbar.links.item6[lan] %></a>
           </div>
           <div class="header_modal_wrapper-social">
-            <a href="#">
+            <!-- <a href="#">
               <svg
                 width="26"
                 height="26"
@@ -306,8 +313,8 @@
                   fill="white"
                 />
               </svg>
-            </a>
-            <a href="#">
+            </a> -->
+            <a href="https://t.me/+998900374659">
               <svg
                 width="26"
                 height="26"
@@ -321,7 +328,7 @@
                 />
               </svg>
             </a>
-            <a href="#">
+            <!-- <a href="#">
               <svg
                 width="25"
                 height="26"
@@ -334,7 +341,7 @@
                   fill="white"
                 />
               </svg>
-            </a>
+            </a> -->
           </div>
         </div>
         <div class="header_modal_buttons">

@@ -1,4 +1,4 @@
-let licenseBtns = document.querySelectorAll(".license_item_modal_button");
+let licenseBtns = document.querySelectorAll(".license_item_img");
 let license_modal = document.querySelector(".license_modal");
 let license_modal_img = document.querySelector(".license_modal_img");
 let licenseModalCloser = document.querySelector(".license_modal-closer");

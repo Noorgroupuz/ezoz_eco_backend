@@ -74,7 +74,7 @@
   }
   &_two {
     background-color: $main_color;
-    padding: 6px 0;
+    padding: 18px 0;
     width: 100%;
     z-index: 11;
     position: fixed;
@@ -92,6 +92,12 @@
     &-links {
       display: flex;
       align-items: center;
+      &-item_single {
+        display: none;
+        @media screen and (max-width: 991px) {
+          display: block;
+        }
+      }
       &-item {
         & + & {
           margin-left: 35px;
@@ -213,6 +219,18 @@
           background-color: transparent;
           border: none;
           outline: none;
+        }
+        &_home_link {
+          // color: red;
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 16px;
+          color: #ffffff !important;
+          display: block;
+          // margin-bottom: 30px;
+          text-decoration: none;
         }
       }
       &-links {
